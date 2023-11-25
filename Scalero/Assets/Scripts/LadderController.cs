@@ -81,6 +81,12 @@ public class LadderController : MonoBehaviour
         transform.SetParent(null);
     }
 
+    public void SetLadder()
+    {
+        activeLadder.GetComponent<Collider2D>().isTrigger = true;
+        transform.SetParent(null);
+    }
+
     public void SetWeapon()
     {
         activeLadder.GetComponent<Collider2D>().isTrigger = true;
