@@ -5,8 +5,8 @@ using UnityEngine;
 public class LadderController : MonoBehaviour
 {
     [SerializeField] private int numberOfSteps = 3; // Number of steps in the ladder
-    private const int MIN_STEPS = 3; // Minimum number of steps in the ladder
-    private const int MAX_STEPS = 5; // Maximum number of steps in the ladder  
+    [SerializeField] private const int MIN_STEPS = 3; // Minimum number of steps in the ladder
+    [SerializeField] private const int MAX_STEPS = 5; // Maximum number of steps in the ladder  
     private GameObject activeLadder;
     [SerializeField] private Transform handBone;
 
@@ -17,6 +17,7 @@ public class LadderController : MonoBehaviour
 
     private void Update()
     {
+        //this will be called by the characterController
         if(Input.GetKeyDown(KeyCode.O))
         {
             IncreaseSize();
@@ -37,8 +38,8 @@ public class LadderController : MonoBehaviour
 
     void IncreaseSize()
     {
-        if(transform.parent == null)
-        {   return;}
+        // if(transform.parent == null)
+        // {   return;}
 
         if(numberOfSteps >= MAX_STEPS)
         {   return;}
@@ -51,8 +52,8 @@ public class LadderController : MonoBehaviour
 
     void DecreaseSize()
     {
-        if(transform.parent == null)
-        {   return;}
+        // if(transform.parent == null)
+        // {   return;}
 
         if(numberOfSteps <= MIN_STEPS)
         {   return;}
