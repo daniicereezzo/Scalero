@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7606600670401069230}
   - component: {fileID: 7606600670401069225}
   m_Layer: 6
-  m_Name: escalera_3
+  m_Name: sub_escalera_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
