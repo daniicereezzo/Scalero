@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour, IDamageable
 {
-    int health;
+    [SerializeField] int health;
     int maxHealth = 100;
-    bool isDead = false;
+    [SerializeField] bool isDead = false;
+
+    void Start()
+    {
+        RefillHealth();
+    }
 
     public void TakeDamage(int damage)
     {
