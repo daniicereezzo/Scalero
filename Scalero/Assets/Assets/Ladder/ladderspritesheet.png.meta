@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eb9ceda290c1d862ab117f7aa2d32881
+guid: 18aaba169dc1ed700b3f18ad7de0e1ac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,64 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: escalera_sprite_5
+      name: laddersprite_10
       rect:
         serializedVersion: 2
-        x: 86
-        y: 294
-        width: 274
-        height: 1186
+        x: 67
+        y: 1533
+        width: 2131
+        height: 252
       alignment: 9
-      pivot: {x: 0.105835125, y: 0.20972174}
+      pivot: {x: 0.056311592, y: 0.9325397}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc689d3c5c92ed9aa801bced4ba3ff6
-      internalID: 1720922188
+      spriteID: c7459bc32df3091189418633bbe1078a
+      internalID: 401722301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: escalera_sprite_4
+      name: laddersprite_9
       rect:
         serializedVersion: 2
-        x: 511
-        y: 297
-        width: 274
-        height: 868
+        x: 87
+        y: 1248
+        width: 1936
+        height: 254
       alignment: 9
-      pivot: {x: 0.11777958, y: 0.27901435}
+      pivot: {x: 0.06198347, y: 0.9251968}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51e24e95657b15cfe98ecead6573b943
-      internalID: -1326978153
+      spriteID: d75ac9e53df626ec3986bddb55c36759
+      internalID: -1508813304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: escalera_sprite_3
+      name: laddersprite_8
       rect:
         serializedVersion: 2
-        x: 920
-        y: 294
-        width: 274
-        height: 652
+        x: 58
+        y: 941
+        width: 1743
+        height: 252
       alignment: 9
-      pivot: {x: 0.10583496, y: 0.3814877}
+      pivot: {x: 0.068846814, y: 0.9325397}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653277c4986cded32b77ef08cb1c23d6
-      internalID: -149264071
+      spriteID: bc4da7e202a3bb3f4bb42459d5952f1b
+      internalID: -198265354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laddersprite_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 628
+        width: 1549
+        height: 254
+      alignment: 9
+      pivot: {x: 0.077469334, y: 0.9251968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f16d94406469369aaba04e4cf2117c
+      internalID: -441439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laddersprite_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 324
+        width: 1355
+        height: 254
+      alignment: 9
+      pivot: {x: 0.08856089, y: 0.9251968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3727ce3780e0bfeaa0dede5a3bbff01
+      internalID: -1850830842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laddersprite_4
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 321
+        width: 968
+        height: 252
+      alignment: 9
+      pivot: {x: 0.12396694, y: 0.9325397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d886071866eadf79b63d27dd8166ea3
+      internalID: 1102591499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laddersprite_5
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 24
+        width: 1162
+        height: 254
+      alignment: 9
+      pivot: {x: 0.103270225, y: 0.9251968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636158918ca54c1b7be26ef0f4cc5060
+      internalID: 1600719994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laddersprite_3
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 41
+        width: 774
+        height: 252
+      alignment: 9
+      pivot: {x: 0.15503876, y: 0.93253976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e50073d205184ac95482a92a58762b
+      internalID: -1030083888
       vertices: []
       indices: 
       edges: []
@@ -190,9 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      escalera_sprite_3: -149264071
-      escalera_sprite_4: -1326978153
-      escalera_sprite_5: 1720922188
+      laddersprite_7: -441439
+      laddersprite_3: -1030083888
+      laddersprite_5: 1600719994
+      laddersprite_10: 401722301
+      laddersprite_6: -1850830842
+      laddersprite_8: -198265354
+      laddersprite_9: -1508813304
+      laddersprite_4: 1102591499
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
