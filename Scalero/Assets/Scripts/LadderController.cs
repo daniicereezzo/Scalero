@@ -11,6 +11,8 @@ public class LadderController : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
     private bool isDead = false;
+    bool ladderFlag = false;
+    Collider2D myPlatform = null;
 
     private void Start()
     {
@@ -33,10 +35,10 @@ public class LadderController : MonoBehaviour, IDamageable
         // {
         //     SetFloor();
         // }
-        // if(Input.GetKeyDown(KeyCode.U))
-        // {
-        //     SetLadder();
-        // }   
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            SetLadder();
+        }   
     }
 
     void IncreaseSize()
@@ -85,10 +87,17 @@ public class LadderController : MonoBehaviour, IDamageable
         rb.isKinematic = true;
     }
 
-    public void SetLadder()
+    public void SetLadder() //this is the one you call from outside and it makes the ladder start falling to the floor
     {
-        activeLadder.GetComponent<Collider2D>().isTrigger = true;
+        ladderFlag = true;
         transform.SetParent(null);
+        activeLadder.GetComponent<Collider2D>().isTrigger = false;
+        rb.isKinematic = false;
+    }
+    void SetLadderLogic()   //this is called when ladder touches floor and its the one actually setting things up
+    {
+        ladderFlag = false;
+        activeLadder.GetComponent<Collider2D>().isTrigger = true;
         rb.isKinematic = true;
         isDead = false;
     }
@@ -117,6 +126,24 @@ public class LadderController : MonoBehaviour, IDamageable
         activeLadder.GetComponent<Collider2D>().isTrigger = false;
         rb.AddForce(new Vector2(-damage, damage)*100);
         rb.AddTorque(damage*100);
+    }
+
+    public Collider2D GetPlatform()
+    {
+        return myPlatform;
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.collider.CompareTag("Platform"))
+        {
+            myPlatform = other.collider;
+        }
+        
+        if(!ladderFlag)
+        {   return;}
+
+        SetLadderLogic();
     }
 
 
