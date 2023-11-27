@@ -23,7 +23,7 @@ public class EnemyWaiting : EnemyBaseState
         if (possibleTarget != null)
         {
             sm.enemyAttacking.SetTarget(possibleTarget);
-            Debug.Log("Target found");
+            Debug.Log("Target found:" + possibleTarget.name);
             sm.ChangeState(sm.enemyAttacking);
         }
     }

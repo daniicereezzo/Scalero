@@ -28,14 +28,17 @@ public class EnemyBaseState : BaseState
 
     protected virtual GameObject CheckIfTargetInRange()
     {
-        if(player.GetComponent<HealthManager>().IsDead())
+        if(player.GetComponent<HealthManager>() != null && player.GetComponent<HealthManager>().IsDead())
         {
             return null;
         }
         //Debug.Log("Player in range: " + player.transform.position.y < sm.transform.position.y + HEIGHT_ATTACK_RANGE);
         if(Mathf.Abs(player.transform.position.y - sm.transform.position.y) < HEIGHT_ATTACK_RANGE)
         {
-            return player;
+            if(IsItSafeFromPitfall(player.GetComponent<HealthManager>()))
+            {
+                return player;
+            }
         }
         
         if(ladder == null)  //remove this one once the ladder is implemented
@@ -50,11 +53,28 @@ public class EnemyBaseState : BaseState
             
         if(ladder.transform.position.y < sm.transform.position.y + HEIGHT_ATTACK_RANGE) //be wary that the ladder has a custom pivot, check it is placed on floor
         {
-            return ladder;
+            if(IsItSafeFromPitfall(ladder.GetComponent<LadderController>()))
+            {
+                return ladder;
+            }
+        }
+        
+        return null;
+    }
+    bool IsItSafeFromPitfall(IDamageable target)
+    {
+        Collider2D myPlatform = sm.GetComponent<HealthManager>().GetPlatform();
+        
+        if(myPlatform == null)
+        { return true; }
+
+        if(myPlatform == target.GetPlatform())
+        {
+            return true;
         }
         else
         {
-            return null;
+            return false;
         }
     }
 }

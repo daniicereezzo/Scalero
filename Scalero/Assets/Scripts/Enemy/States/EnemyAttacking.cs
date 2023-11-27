@@ -49,12 +49,14 @@ public class EnemyAttacking : EnemyBaseState
 
     protected virtual IEnumerator Attack(GameObject target)
     {
+        attacking = true;
         while (Mathf.Abs(sm.transform.position.x - target.transform.position.x) < FOLLOW_RANGE)
         {
             if(target.GetComponent<IDamageable>().IsDead())
             {
                 sm.ChangeState(sm.enemyWaiting);
                 attacking = false;
+                Debug.Log("Target is dead");
                 yield break;
             }
 
@@ -73,7 +75,6 @@ public class EnemyAttacking : EnemyBaseState
         //it should not change constantly between targets because new target is only assigned from waitingState, and this is only entered if there are no targets in range.
         if (CheckIfTargetInRange() == null)
         {
-            Debug.Log("Target lost");
             attacking = false;
             sm.ChangeState(sm.enemyWaiting);
         }
