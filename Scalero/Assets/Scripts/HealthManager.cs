@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+public class HealthManager : MonoBehaviour, IDamageable
 {
     int health;
     int maxHealth = 100;
@@ -74,17 +74,5 @@ public class HealthManager : MonoBehaviour
         {
             health = maxHealth;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = maxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
