@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     [SerializeField] int health;
     int maxHealth = 100;
     [SerializeField] bool isDead = false;
+    Collider2D myPlatform = null;
 
     void Start()
     {
@@ -78,6 +79,20 @@ public class HealthManager : MonoBehaviour, IDamageable
         if (health > maxHealth)
         {
             health = maxHealth;
+        }
+    }
+
+    public Collider2D GetPlatform()
+    {
+        return myPlatform;
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //Debug.Log(other.gameObject.name);
+        if(other.collider.CompareTag("Platform"))
+        {
+            myPlatform = other.collider;
         }
     }
 }

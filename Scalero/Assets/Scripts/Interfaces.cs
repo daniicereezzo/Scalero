@@ -6,4 +6,5 @@ using UnityEngine;
     {
         void TakeDamage(int damage);
         bool IsDead();
+        Collider2D GetPlatform();
     } 
