@@ -9,9 +9,12 @@ public class HealthManager : MonoBehaviour, IDamageable
     [SerializeField] bool isDead = false;
     Collider2D myPlatform = null;
 
+    Animator animator;
+
     void Start()
     {
         RefillHealth();
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
@@ -20,7 +23,7 @@ public class HealthManager : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             health = 0;
-            isDead = true;
+            Die();
         }
     }
 
@@ -40,7 +43,7 @@ public class HealthManager : MonoBehaviour, IDamageable
         if(isDead) { return; }
 
         health = 0;
-        isDead = true;
+        Die();
     }
 
     public void Revive()
@@ -85,6 +88,12 @@ public class HealthManager : MonoBehaviour, IDamageable
     public Collider2D GetPlatform()
     {
         return myPlatform;
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        animator.SetTrigger("onDie");
     }
 
     void OnCollisionEnter2D(Collision2D other)
