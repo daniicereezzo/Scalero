@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+public class HealthManager : MonoBehaviour, IDamageable
 {
-    int health;
+    [SerializeField] int health;
     int maxHealth = 100;
-    bool isDead = false;
+    [SerializeField] bool isDead = false;
+    Collider2D myPlatform = null;
+
+    Animator animator;
+
+    void Start()
+    {
+        RefillHealth();
+        animator = GetComponent<Animator>();
+    }
 
     public void TakeDamage(int damage)
     {
@@ -14,7 +23,7 @@ public class HealthManager : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            isDead = true;
+            Die();
         }
     }
 
@@ -34,7 +43,7 @@ public class HealthManager : MonoBehaviour
         if(isDead) { return; }
 
         health = 0;
-        isDead = true;
+        Die();
     }
 
     public void Revive()
@@ -76,15 +85,23 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public Collider2D GetPlatform()
     {
-        health = maxHealth;
+        return myPlatform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        
+        isDead = true;
+        animator.SetTrigger("onDie");
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //Debug.Log(other.gameObject.name);
+        if(other.collider.CompareTag("Platform"))
+        {
+            myPlatform = other.collider;
+        }
     }
 }
