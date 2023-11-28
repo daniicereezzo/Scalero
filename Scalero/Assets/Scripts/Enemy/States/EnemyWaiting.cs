@@ -16,6 +16,13 @@ public class EnemyWaiting : EnemyBaseState
         //código aquí
     }
 
+    override public void Enter()
+    {
+        base.Enter();
+        sm.animator.SetBool("following", false);
+        sm.animator.SetBool("attacking", false);
+    }
+
     public override void UpdateLogic()
     {
         base.UpdateLogic();

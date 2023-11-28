@@ -6,15 +6,16 @@ public class EnemyAttacking : EnemyBaseState
 {
     public EnemyAttacking(EnemyController ec) : base(ec, "EnemyAttacking"){ }
     #region variables
-    protected const float ATTACK_RANGE = 1.5f;
-    protected const int ATTACK_DAMAGE = 1;
-    protected const float FOLLOW_RANGE = 2f;
-    protected const float ATTACK_COOLDOWN = 1.5f;
     protected GameObject target;
     bool attacking;
 
 
     #endregion
+    public override void Enter()
+    {
+        base.Enter();
+        sm.animator.SetBool("following", true);
+    }
 
     protected override void OnInstantiated()
     {
@@ -24,7 +25,7 @@ public class EnemyAttacking : EnemyBaseState
 
     protected virtual void MoveTowardsTarget()
     {
-        if (Mathf.Abs(sm.transform.position.x - target.transform.position.x) < ATTACK_RANGE)
+        if (Mathf.Abs(sm.transform.position.x - target.transform.position.x) < EnemyController.ATTACK_RANGE)
         {
             if (attacking)
             {
@@ -50,21 +51,21 @@ public class EnemyAttacking : EnemyBaseState
     protected virtual IEnumerator Attack(GameObject target)
     {
         attacking = true;
-        while (Mathf.Abs(sm.transform.position.x - target.transform.position.x) < FOLLOW_RANGE)
+        sm.animator.SetBool("attacking", true);
+        while (Mathf.Abs(sm.transform.position.x - target.transform.position.x) < EnemyController.FOLLOW_RANGE)
         {
             if(target.GetComponent<IDamageable>().IsDead())
             {
                 sm.ChangeState(sm.enemyWaiting);
                 attacking = false;
+                
                 Debug.Log("Target is dead");
                 yield break;
             }
 
-            Debug.Log("Attacking");
-            target.GetComponent<IDamageable>().TakeDamage(ATTACK_DAMAGE);
-
-            yield return new WaitForSeconds(ATTACK_COOLDOWN);
+            yield return null;
         }
+        sm.animator.SetBool("attacking", false);
     }
 
     public override void UpdateLogic()
