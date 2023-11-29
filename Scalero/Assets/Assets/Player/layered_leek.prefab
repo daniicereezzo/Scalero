@@ -594,8 +594,8 @@ MonoBehaviour:
   - {fileID: 2992291586280567503}
   - {fileID: 6521874615299210025}
   m_Bounds:
-    m_Center: {x: 0.0076397657, y: 0.4130479, z: 0}
-    m_Extent: {x: 0.4253754, y: 1.22491, z: 0}
+    m_Center: {x: 0.32810646, y: 0.46048594, z: 0}
+    m_Extent: {x: 0.673494, y: 1.2006168, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1007,8 +1007,8 @@ MonoBehaviour:
   - {fileID: 5046729739556838271}
   - {fileID: 7491665579753085263}
   m_Bounds:
-    m_Center: {x: 0.17050233, y: 0.09649411, z: 0}
-    m_Extent: {x: 0.1748518, y: 0.14316706, z: 0}
+    m_Center: {x: -0.119019985, y: 0.12616868, z: 0}
+    m_Extent: {x: 0.1410929, y: 0.1805966, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1149,8 +1149,8 @@ MonoBehaviour:
   - {fileID: 4035121092331580249}
   - {fileID: 688296520340795212}
   m_Bounds:
-    m_Center: {x: 0.035360724, y: 0.042412743, z: 0}
-    m_Extent: {x: 0.1715844, y: 0.17176826, z: 0}
+    m_Center: {x: 0.044558838, y: 0.14774261, z: 0}
+    m_Extent: {x: 0.16974503, y: 0.17887792, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   - {fileID: 362533254730760125}
   - {fileID: 6401579123417783761}
   m_Bounds:
-    m_Center: {x: 0.034419984, y: 0.049505934, z: 0}
-    m_Extent: {x: 0.16666338, y: 0.16289431, z: 0}
+    m_Center: {x: 0.0053570867, y: 0.118289456, z: 0}
+    m_Extent: {x: 0.15358841, y: 0.20118655, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1604,8 +1604,8 @@ MonoBehaviour:
   - {fileID: 1465433273504383336}
   - {fileID: 2221631731762042344}
   m_Bounds:
-    m_Center: {x: -0.008308619, y: 0.01921019, z: 0}
-    m_Extent: {x: 0.11589107, y: 0.19590795, z: 0}
+    m_Center: {x: -0.18343957, y: 0.18161508, z: 0}
+    m_Extent: {x: 0.20220102, y: 0.121483795, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1712,6 +1712,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4025077438502603893}
     m_Modifications:
+    - target: {fileID: 547955529171103710, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 686722582795360992, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459966482114895458, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562427682505248930, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134291210785944315, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1759,6 +1779,22 @@ PrefabInstance:
     - target: {fileID: 5617299169139115151, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
       propertyPath: m_Name
       value: Escalera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054098505377906353, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127315046740828908, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289268760215024438, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030890736918971769, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
