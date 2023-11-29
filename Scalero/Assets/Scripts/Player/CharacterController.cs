@@ -13,6 +13,7 @@ public class CharacterController : StateMachine
     #region variables
     HealthManager healthManager;
     Rigidbody2D rb;
+    LadderController ladderController;
 
     public float speed = 5;
     public float jumpForce = 5;
@@ -26,6 +27,7 @@ public class CharacterController : StateMachine
 
         healthManager = GetComponent<HealthManager>();
         rb = GetComponent<Rigidbody2D>();
+        ladderController = GetComponentInChildren<LadderController>();
     }
 
     protected override BaseState GetInitialState()
@@ -37,5 +39,13 @@ public class CharacterController : StateMachine
     public new PlayerBaseState GetCurrentState()
     {
         return (PlayerBaseState)currentState;
+    }
+    public void EnableLadderDamage()
+    {
+        ladderController.EnableDamage();
+    }
+    public void DisableLadderDamage()
+    {
+        ladderController.DisableDamage();
     }
 }

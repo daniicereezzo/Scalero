@@ -7,11 +7,13 @@ public class LadderController : MonoBehaviour, IDamageable
     [SerializeField] private int numberOfSteps = 3; // Number of steps in the ladder
     [SerializeField] private const int MIN_STEPS = 3; // Minimum number of steps in the ladder
     [SerializeField] private const int MAX_STEPS = 10; // Maximum number of steps in the ladder  
+    [SerializeField] private const int LADDER_DAMAGE = 1; 
     private GameObject activeLadder;
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
     private bool isDead = false;
     bool ladderFlag = false;
+    bool canHurt = false;
     Collider2D myPlatform = null;
 
     private void Start()
@@ -132,6 +134,16 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         return myPlatform;
     }
+    public void EnableDamage()
+    {
+        canHurt = true;
+    }
+    public void DisableDamage()
+    {
+        canHurt = false;
+    }
+
+        
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -144,6 +156,17 @@ public class LadderController : MonoBehaviour, IDamageable
         {   return;}
 
         SetLadderLogic();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(!canHurt)
+        {   return;}
+
+        if(!other.CompareTag("Enemy"))
+        {  return;}
+        
+        other.GetComponent<IDamageable>().TakeDamage(LADDER_DAMAGE);
     }
 
 

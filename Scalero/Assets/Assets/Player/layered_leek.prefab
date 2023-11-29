@@ -594,8 +594,8 @@ MonoBehaviour:
   - {fileID: 2992291586280567503}
   - {fileID: 6521874615299210025}
   m_Bounds:
-    m_Center: {x: 0.32810646, y: 0.46048594, z: 0}
-    m_Extent: {x: 0.673494, y: 1.2006168, z: 0}
+    m_Center: {x: -0.25363612, y: 0.56077635, z: 0}
+    m_Extent: {x: 0.53401184, y: 1.2113678, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1007,8 +1007,8 @@ MonoBehaviour:
   - {fileID: 5046729739556838271}
   - {fileID: 7491665579753085263}
   m_Bounds:
-    m_Center: {x: -0.119019985, y: 0.12616868, z: 0}
-    m_Extent: {x: 0.1410929, y: 0.1805966, z: 0}
+    m_Center: {x: -0.09899679, y: 0.5335711, z: 0}
+    m_Extent: {x: 0.12031332, y: 0.19159397, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1149,8 +1149,8 @@ MonoBehaviour:
   - {fileID: 4035121092331580249}
   - {fileID: 688296520340795212}
   m_Bounds:
-    m_Center: {x: 0.044558838, y: 0.14774261, z: 0}
-    m_Extent: {x: 0.16974503, y: 0.17887792, z: 0}
+    m_Center: {x: -0.020453535, y: 0.15209004, z: 0}
+    m_Extent: {x: 0.10785418, y: 0.24644467, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   - {fileID: 362533254730760125}
   - {fileID: 6401579123417783761}
   m_Bounds:
-    m_Center: {x: 0.0053570867, y: 0.118289456, z: 0}
-    m_Extent: {x: 0.15358841, y: 0.20118655, z: 0}
+    m_Center: {x: -0.10265571, y: 0.17135076, z: 0}
+    m_Extent: {x: 0.15790194, y: 0.21876639, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1421,6 +1421,7 @@ GameObject:
   - component: {fileID: 7376450393054146179}
   - component: {fileID: 4819106192569638269}
   - component: {fileID: 5355932248034104561}
+  - component: {fileID: 2526884883993120243}
   m_Layer: 10
   m_Name: layered_leek
   m_TagString: Player
@@ -1501,6 +1502,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2526884883993120243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545144165611288288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb99983254d41d0f68d35deba1f46dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStateName: 
+  speed: 5
+  jumpForce: 5
+  climbSpeed: 5
 --- !u!1 &8775340078442908217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,8 +1621,8 @@ MonoBehaviour:
   - {fileID: 1465433273504383336}
   - {fileID: 2221631731762042344}
   m_Bounds:
-    m_Center: {x: -0.18343957, y: 0.18161508, z: 0}
-    m_Extent: {x: 0.20220102, y: 0.121483795, z: 0}
+    m_Center: {x: -0.098827094, y: 0.20284197, z: 0}
+    m_Extent: {x: 0.11806968, y: 0.1588045, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
