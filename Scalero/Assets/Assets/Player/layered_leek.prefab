@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6401579123417783761}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2902050904065291729}
   - component: {fileID: 2069602063789965268}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: leek_lowhealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 2d595c892f65d28739e8e17ee5ad0a88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 362533254730760125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_sheen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6025821284144592602}
   - component: {fileID: 416452935291696723}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegFootSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5046729739556838271}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4035121092331580249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_sheen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2488385917411155012}
-  m_LocalRotation: {x: 0, y: 0, z: -0.0000003985869, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0000005076841, w: 1}
   m_LocalPosition: {x: 0.12604935, y: 0.000000111663965, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
   m_ConstrainProportionsScale: 0
@@ -285,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 688296520340795212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7169561889538801379}
   - component: {fileID: 5564488761184327651}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'decorations-wrapper-layer '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1891014126342513729}
   - component: {fileID: 8231590134599446314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightFootSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2992291586280567503}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 8608975449499893382}
   - component: {fileID: 8738061147972000549}
   - component: {fileID: 5829640636822425197}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Capa de pintura 1 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,8 +594,8 @@ MonoBehaviour:
   - {fileID: 2992291586280567503}
   - {fileID: 6521874615299210025}
   m_Bounds:
-    m_Center: {x: -0.000107616186, y: 0.038064122, z: 0}
-    m_Extent: {x: 0.28358358, y: 0.83398473, z: 0}
+    m_Center: {x: 0.0076397657, y: 0.4130479, z: 0}
+    m_Extent: {x: 0.4253754, y: 1.22491, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -608,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 627209825574684908}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1465433273504383336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7924582687730655841}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903822191414287658}
   - component: {fileID: 5159111960325694580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftHandSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7975535534700549106}
   - component: {fileID: 4968458989864834243}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: leek_normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: d95af7c362ef7fe2db1888d387ed473b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -850,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7592273417938925237}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7491665579753085263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 3847911475343827669}
   - component: {fileID: 6509495949831487856}
   - component: {fileID: 1277975044049324974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Copia de Capa de pintura 6 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,8 +1007,8 @@ MonoBehaviour:
   - {fileID: 5046729739556838271}
   - {fileID: 7491665579753085263}
   m_Bounds:
-    m_Center: {x: -0.00021399558, y: 0.037789762, z: 0}
-    m_Extent: {x: 0.08171444, y: 0.1730628, z: 0}
+    m_Center: {x: 0.17050233, y: 0.09649411, z: 0}
+    m_Extent: {x: 0.1748518, y: 0.14316706, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1021,7 +1021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6586560235690741289}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Faces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 6430306435929670524}
   - component: {fileID: 6349634039968336112}
   - component: {fileID: 3797322951582962358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Capa de pintura 3 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,8 +1149,8 @@ MonoBehaviour:
   - {fileID: 4035121092331580249}
   - {fileID: 688296520340795212}
   m_Bounds:
-    m_Center: {x: 0.0023964718, y: 0.062367603, z: 0}
-    m_Extent: {x: 0.11579688, y: 0.1431486, z: 0}
+    m_Center: {x: 0.035360724, y: 0.042412743, z: 0}
+    m_Extent: {x: 0.1715844, y: 0.17176826, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 4388108554294873654}
   - component: {fileID: 5541445608208936775}
   - component: {fileID: 5127900315017534554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Copia de Capa de pintura 3 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   - {fileID: 362533254730760125}
   - {fileID: 6401579123417783761}
   m_Bounds:
-    m_Center: {x: 0.000099115074, y: 0.061398186, z: 0}
-    m_Extent: {x: 0.11144559, y: 0.14276354, z: 0}
+    m_Center: {x: 0.034419984, y: 0.049505934, z: 0}
+    m_Extent: {x: 0.16666338, y: 0.16289431, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1272,7 +1272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7987967032349975612}
   - component: {fileID: 4102547224597364812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: leek_hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1334,7 +1334,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 4eabee350e8dfce9f9382bb07712adeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1355,7 +1355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6521874615299210025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1387,7 +1387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4025077438502603893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1405,7 +1405,8 @@ Transform:
   m_LocalPosition: {x: 0.13609317, y: 0.000000027436613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8520962371210339810}
   m_Father: {fileID: 5046729739556838271}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1420,9 +1421,9 @@ GameObject:
   - component: {fileID: 7376450393054146179}
   - component: {fileID: 4819106192569638269}
   - component: {fileID: 5355932248034104561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: layered_leek
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1437,7 +1438,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7169561889538801379}
   - {fileID: 121043889526981827}
@@ -1511,7 +1512,7 @@ GameObject:
   - component: {fileID: 121043889526981827}
   - component: {fileID: 1751043832680779459}
   - component: {fileID: 8138146255051437424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Capa de pintura 6 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1573,7 +1574,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -4396933615726406060, guid: 6ad6483b0711b9676b02091dccb60958, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1603,8 +1604,8 @@ MonoBehaviour:
   - {fileID: 1465433273504383336}
   - {fileID: 2221631731762042344}
   m_Bounds:
-    m_Center: {x: 0.0016808584, y: 0.03370373, z: 0}
-    m_Extent: {x: 0.07899057, y: 0.17770624, z: 0}
+    m_Center: {x: -0.008308619, y: 0.01921019, z: 0}
+    m_Extent: {x: 0.11589107, y: 0.19590795, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1617,7 +1618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2221631731762042344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760282781110073839}
   - component: {fileID: 5862900831245457881}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightHandSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1704,3 +1705,65 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0, w: 0}
     - {x: 0, y: 0, z: 0, w: 0}
   m_Flip: 1
+--- !u!1001 &4302114071480901992
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4025077438502603893}
+    m_Modifications:
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.309017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.95105654
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617299169139115151, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+      propertyPath: m_Name
+      value: Escalera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+--- !u!4 &8520962371210339810 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5617299169139115146, guid: a0434529db9c149c084b1c2f4eb487e8, type: 3}
+  m_PrefabInstance: {fileID: 4302114071480901992}
+  m_PrefabAsset: {fileID: 0}
