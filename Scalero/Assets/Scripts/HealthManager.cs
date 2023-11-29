@@ -11,14 +11,16 @@ public class HealthManager : MonoBehaviour, IDamageable
 
     Animator animator;
 
-    void Start()
+    protected virtual void Start()
     {
         RefillHealth();
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
+        if(isDead) { return; }
+
         health -= damage;
         if (health <= 0)
         {
@@ -90,13 +92,13 @@ public class HealthManager : MonoBehaviour, IDamageable
         return myPlatform;
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         isDead = true;
         animator.SetTrigger("onDie");
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    protected virtual void OnCollisionEnter2D(Collision2D other)
     {
         //Debug.Log(other.gameObject.name);
         if(other.collider.CompareTag("Platform"))
