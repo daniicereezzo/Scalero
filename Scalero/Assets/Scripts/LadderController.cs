@@ -6,7 +6,7 @@ public class LadderController : MonoBehaviour, IDamageable
 {
     [SerializeField] private int numberOfSteps = 3; // Number of steps in the ladder
     [SerializeField] private const int MIN_STEPS = 3; // Minimum number of steps in the ladder
-    [SerializeField] private const int MAX_STEPS = 5; // Maximum number of steps in the ladder  
+    [SerializeField] private const int MAX_STEPS = 10; // Maximum number of steps in the ladder  
     private GameObject activeLadder;
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
