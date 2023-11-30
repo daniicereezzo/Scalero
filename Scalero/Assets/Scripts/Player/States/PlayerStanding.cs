@@ -12,7 +12,9 @@ public class PlayerStanding : PlayerBaseState
     const float normalSpeed = 5;
     const float sprintSpeed = 10;
     const float jumpForce = 5;
+    const float MIN_ANIMATION_RATE = 0.6f;
     bool isSprinting = false;
+    
     #endregion
 
     protected override void OnInstantiated()
@@ -62,12 +64,14 @@ public class PlayerStanding : PlayerBaseState
 
     public override void Attack()
     {
-        if (!playerController.HasLadder())   //implement here secondary attack without ladder
+        if (!characterController.HasLadder())   //implement here secondary attack without ladder
         { return; }
-            
+
+        int steps = characterController.ladderController.GetNumberOfSteps();
+        int interpolationParameter = (steps - LadderController.MIN_STEPS) / (LadderController.MAX_STEPS - LadderController.MIN_STEPS);
+
+        playerAnimator.SetFloat("attackSpeedParameter", Mathf.Lerp(1, MIN_ANIMATION_RATE, interpolationParameter));
         playerAnimator.SetTrigger("onAttack");
-        // playerController.ladderController.GetNumberOfSteps();
-        // Start the attack animation
     }
 
     public override void ThrowStick()

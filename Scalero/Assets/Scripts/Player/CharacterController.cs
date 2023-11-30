@@ -13,7 +13,8 @@ public class CharacterController : StateMachine
     #region variables
     HealthManager healthManager;
     Rigidbody2D rb;
-    LadderController ladderController;
+    public LadderController ladderController;
+    bool hasLadder = true;
 
     public float speed = 5;
     public float jumpForce = 5;
@@ -47,5 +48,23 @@ public class CharacterController : StateMachine
     public void DisableLadderDamage()
     {
         ladderController.DisableDamage();
+    }
+
+    public bool HasLadder()
+    {
+        return hasLadder;
+    }
+    public void SetLadder()
+    {
+        ladderController.SetLadder();
+        hasLadder = false;
+    }
+    public void RetrieveLadder()
+    {
+        if(hasLadder)
+        { return; }
+
+        ladderController.SetWeapon();
+        hasLadder = true;
     }
 }

@@ -52,7 +52,14 @@ public class InputManager : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.L))
         {
+            if(!playerController.HasLadder())
+            { return; }
+
             playerController.SetLadder();
+        }
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            playerController.RetrieveLadder();
         }
     }
 }

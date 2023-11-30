@@ -1425,7 +1425,7 @@ GameObject:
   - component: {fileID: 604991679805505223}
   - component: {fileID: 5201493157570674245}
   - component: {fileID: 6948149752962722183}
-  - component: {fileID: 2097866177278915707}
+  - component: {fileID: 2644951958904657223}
   m_Layer: 10
   m_Name: layered_leek
   m_TagString: Player
@@ -1579,7 +1579,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59861237, y: 0.7798653}
   m_EdgeRadius: 0
---- !u!114 &2097866177278915707
+--- !u!114 &2644951958904657223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1588,11 +1588,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8545144165611288288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6040547097ab6c97cb52382eed4c9f61, type: 3}
+  m_Script: {fileID: 11500000, guid: cb99983254d41d0f68d35deba1f46dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentStateName: 
-  ladderController: {fileID: 0}
   speed: 5
   jumpForce: 5
   climbSpeed: 5

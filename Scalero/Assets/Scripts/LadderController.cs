@@ -5,10 +5,11 @@ using UnityEngine;
 public class LadderController : MonoBehaviour, IDamageable
 {
     [SerializeField] private int numberOfSteps = 3; // Number of steps in the ladder
-    [SerializeField] private const int MIN_STEPS = 3; // Minimum number of steps in the ladder
-    [SerializeField] private const int MAX_STEPS = 10; // Maximum number of steps in the ladder  
-    [SerializeField] private const int LADDER_DAMAGE = 33; 
-    private const float LADDER_PIVOT_HEIGHT_DIFFERENCE_UNITS = 200f/512f; // Height in pixels of the pivot of the ladder in the sprite + 10 / pixels per unit
+    public const int MIN_STEPS = 3; // Minimum number of steps in the ladder
+    public const int MAX_STEPS = 10; // Maximum number of steps in the ladder  
+    [SerializeField] private const int LADDER_DAMAGE = 30;
+    [SerializeField] private const int DAMAGE_BONUS_PER_STEP = 5; 
+    private const float LADDER_DROP_HEIGHT = 0.2f; // Enough Height so it starts falling from above the floor 
     private GameObject activeLadder;
     private Collider2D myCollider;
     private Rigidbody2D rb;
@@ -16,6 +17,7 @@ public class LadderController : MonoBehaviour, IDamageable
     private bool isDead = false;
     bool ladderFlag = false;
     bool canHurt = false;
+    float DEFAULT_ROTATION_Z;
     Collider2D myPlatform = null;
     List<GameObject> damagedEnemies;
 
@@ -25,6 +27,7 @@ public class LadderController : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         damagedEnemies = new List<GameObject>();
         myCollider = GetComponent<Collider2D>();
+        DEFAULT_ROTATION_Z = transform.rotation.z;
     }
 
     private void Update()
@@ -79,13 +82,13 @@ public class LadderController : MonoBehaviour, IDamageable
     public int GetNumberOfSteps()
     {   return numberOfSteps;}
 
-    public bool IsPlanted()
-    {
-        if (transform.parent == null)
-        {   return true;}
-        else
-        {   return false;}
-    }
+    // public bool IsPlanted()
+    // {
+    //     if (transform.parent == null)
+    //     {   return true;}
+    //     else
+    //     {   return false;}
+    // }
 
     public void SetFloor()
     {
@@ -98,8 +101,9 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         ladderFlag = true;
         transform.SetParent(null);
-        transform.position += Vector3.up * LADDER_PIVOT_HEIGHT_DIFFERENCE_UNITS;    //this is to make the ladder fall to the floor adjusting height to the minimum required
         transform.rotation = Quaternion.Euler(0, 0, 90);
+        transform.localScale = new Vector3(1, 1, 1);
+        transform.position += Vector3.up * LADDER_DROP_HEIGHT;    //this is to make the ladder fall to the floor adjusting height to the minimum required
         myCollider.enabled = true;
         rb.isKinematic = false;
     }
@@ -114,17 +118,15 @@ public class LadderController : MonoBehaviour, IDamageable
     public void SetWeapon()
     {
         activeLadder.GetComponent<Collider2D>().isTrigger = true;
-        transform.position = handBone.position;
         transform.SetParent(handBone);
+        transform.localPosition = Vector3.zero;
+        transform.rotation = Quaternion.Euler(0, 0, DEFAULT_ROTATION_Z);
+        transform.localScale = new Vector3(1, 1, 1);
         rb.isKinematic = true;
     }
 
     public bool IsDead()
     {
-        // if(Mathf.Approximately(transform.rotation.eulerAngles.z, 0))
-        // {   return false;}
-        // else
-        // {   return true;}
         return isDead;
     }
 
@@ -179,7 +181,7 @@ public class LadderController : MonoBehaviour, IDamageable
         if(damagedEnemies.Contains(other.gameObject))
         {   return;}
         
-        other.GetComponent<IDamageable>().TakeDamage(LADDER_DAMAGE);
+        other.GetComponent<IDamageable>().TakeDamage(LADDER_DAMAGE+(numberOfSteps-MIN_STEPS)*DAMAGE_BONUS_PER_STEP);
         damagedEnemies.Add(other.gameObject);
     }
 
