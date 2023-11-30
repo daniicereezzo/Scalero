@@ -115,13 +115,13 @@ public class LadderController : MonoBehaviour, IDamageable
         isDead = false;
     }
 
-    public void SetWeapon()
+    public void SetWeapon(float playerRotationY)
     {
         activeLadder.GetComponent<Collider2D>().isTrigger = true;
         transform.SetParent(handBone);
         transform.localPosition = Vector3.zero;
         transform.rotation = Quaternion.Euler(0, 0, DEFAULT_ROTATION_Z);
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.localScale = new Vector3(Mathf.Sign(playerRotationY), 1, 1);
         rb.isKinematic = true;
     }
 

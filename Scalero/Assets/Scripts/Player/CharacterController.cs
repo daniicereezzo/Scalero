@@ -66,7 +66,7 @@ public class CharacterController : StateMachine
         if(hasLadder)
         { return; }
 
-        ladderController.SetWeapon();
+        ladderController.SetWeapon(transform.right.x);
         hasLadder = true;
     }
 }
