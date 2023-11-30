@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class CharacterController : StateMachine
     #region variables
     HealthManager healthManager;
     Rigidbody2D rb;
-    public LadderController ladderController;
+    [NonSerialized] public LadderController ladderController;
     public GameObject throwableStickPrefab;
     bool hasLadder = true;
 

@@ -34,11 +34,11 @@ public class PlayerStanding : PlayerBaseState
 
         if(horizontal > 0)
         {
-            characterController.transform.localScale = new Vector3(1, 1, 1);
+            characterController.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if(horizontal < 0)
         {
-            characterController.transform.localScale = new Vector3(-1, 1, 1);
+            characterController.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         if(horizontal == 0)
@@ -71,7 +71,7 @@ public class PlayerStanding : PlayerBaseState
         int interpolationParameter = (steps - LadderController.MIN_STEPS) / (LadderController.MAX_STEPS - LadderController.MIN_STEPS);
 
         playerAnimator.SetFloat("attackSpeedParameter", Mathf.Lerp(1, MIN_ANIMATION_RATE, interpolationParameter));
-        playerAnimator.SetTrigger("onAttack");
+        playerAnimator.SetTrigger("onAttack");  //should implement a return if is already attacking, but not very important
     }
 
     public override void ThrowStick()
