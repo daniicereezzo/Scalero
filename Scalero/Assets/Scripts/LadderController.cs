@@ -11,14 +11,14 @@ public class LadderController : MonoBehaviour, IDamageable
     [SerializeField] private const int DAMAGE_BONUS_PER_STEP = 5; 
     private const float LADDER_DROP_HEIGHT = 0.2f; // Enough Height so it starts falling from above the floor 
     private GameObject activeLadder;
-    private Collider2D myCollider;
+    private BoxCollider2D myCollider;
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
     private bool isDead = true;
     bool ladderFlag = false;
     bool canHurt = false;
     float DEFAULT_ROTATION_Z;
-    Collider2D myPlatform = null;
+    BoxCollider2D myPlatform = null;
     List<GameObject> damagedEnemies;
 
     private void Start()
@@ -26,7 +26,7 @@ public class LadderController : MonoBehaviour, IDamageable
         activeLadder = transform.GetChild(numberOfSteps-MIN_STEPS).gameObject;
         rb = GetComponent<Rigidbody2D>();
         damagedEnemies = new List<GameObject>();
-        myCollider = GetComponent<Collider2D>();
+        myCollider = GetComponent<BoxCollider2D>();
         DEFAULT_ROTATION_Z = transform.rotation.z;
     }
 
@@ -90,11 +90,11 @@ public class LadderController : MonoBehaviour, IDamageable
     //     {   return false;}
     // }
 
-    public void SetFloor()
+    public void SetFloor()  //probably not gonna implement this one
     {
-        activeLadder.GetComponent<Collider2D>().isTrigger = false;
-        transform.SetParent(null);
-        rb.isKinematic = true;
+        // activeLadder.GetComponent<BoxCollider2D>().isTrigger = false;
+        // transform.SetParent(null);
+        // rb.isKinematic = true;
     }
 
     public void SetLadder() //this is the one you call from outside and it makes the ladder start falling to the floor
@@ -104,7 +104,10 @@ public class LadderController : MonoBehaviour, IDamageable
         transform.rotation = Quaternion.Euler(0, 0, 90);
         transform.localScale = new Vector3(1, 1, 1);
         transform.position += Vector3.up * LADDER_DROP_HEIGHT;    //this is to make the ladder fall to the floor adjusting height to the minimum required
-        myCollider.enabled = true;
+        SetMyCollider();
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
         rb.isKinematic = false;
     }
     void SetLadderLogic()   //this is called when ladder touches floor and its the one actually setting things up
@@ -117,7 +120,8 @@ public class LadderController : MonoBehaviour, IDamageable
 
     public void SetWeapon(float playerRotationY)
     {
-        activeLadder.GetComponent<Collider2D>().isTrigger = true;
+        isDead = true;
+        myCollider.enabled = false;
         transform.SetParent(handBone);
         transform.localPosition = Vector3.zero;
         transform.rotation = Quaternion.Euler(0, 0, DEFAULT_ROTATION_Z);
@@ -134,7 +138,8 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         isDead = true;
         rb.isKinematic = false;
-        activeLadder.GetComponent<Collider2D>().isTrigger = false;
+        SetMyCollider();
+        rb.constraints = RigidbodyConstraints2D.None;
         float directionSign = Mathf.Sign(transform.position.x - damager.transform.position.x);
         rb.AddForce(new Vector2(directionSign * damage, damage)*50);
         rb.AddTorque(-directionSign * damage*50);
@@ -153,6 +158,12 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         canHurt = false;
     }
+    void SetMyCollider()
+    {
+        myCollider.enabled = true;
+        myCollider.offset = activeLadder.GetComponent<BoxCollider2D>().offset;
+        myCollider.size = activeLadder.GetComponent<BoxCollider2D>().size;
+    }
 
         
 
@@ -160,7 +171,7 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         if(other.collider.CompareTag("Platform"))
         {
-            myPlatform = other.collider;
+            myPlatform = (BoxCollider2D)other.collider;
         }
         else
         { return; }
