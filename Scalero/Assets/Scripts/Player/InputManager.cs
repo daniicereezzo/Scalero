@@ -50,5 +50,9 @@ public class InputManager : MonoBehaviour
         {
             playerController.GetCurrentState().ThrowStick();
         }
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            playerController.SetLadder();
+        }
     }
 }

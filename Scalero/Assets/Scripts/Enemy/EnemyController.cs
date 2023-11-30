@@ -10,7 +10,7 @@ public class EnemyController : StateMachine
     public EnemyAttacking enemyAttacking;
     public Animator animator;
     public Collider2D myStake;
-    public const float ATTACK_RANGE = 1.1f;
+    public const float ATTACK_RANGE = 0.8f;
     public const int ATTACK_DAMAGE = 1;
     public const float FOLLOW_RANGE = 2f;
 

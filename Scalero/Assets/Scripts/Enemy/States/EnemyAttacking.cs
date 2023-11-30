@@ -74,7 +74,7 @@ public class EnemyAttacking : EnemyBaseState
         MoveTowardsTarget();
 
         //it should not change constantly between targets because new target is only assigned from waitingState, and this is only entered if there are no targets in range.
-        if (CheckIfTargetInRange() == null)
+        if (CheckIfTargetInRange() != target)
         {
             attacking = false;
             sm.ChangeState(sm.enemyWaiting);

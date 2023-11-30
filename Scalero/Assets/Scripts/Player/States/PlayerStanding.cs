@@ -41,11 +41,11 @@ public class PlayerStanding : PlayerBaseState
 
         if(horizontal == 0)
         {
-            playerAnimator.SetBool("Walking", false);
+            playerAnimator.SetBool("walking", false);
         }
         else
         {
-            playerAnimator.SetBool("Walking", true);
+            playerAnimator.SetBool("walking", true);
         }
 
         // We have to implement ShouldStartClimbing() and ShouldStopClimbing()
@@ -62,6 +62,11 @@ public class PlayerStanding : PlayerBaseState
 
     public override void Attack()
     {
+        if (!playerController.HasLadder())   //implement here secondary attack without ladder
+        { return; }
+            
+        playerAnimator.SetTrigger("onAttack");
+        // playerController.ladderController.GetNumberOfSteps();
         // Start the attack animation
     }
 

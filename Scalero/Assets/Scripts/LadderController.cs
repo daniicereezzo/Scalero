@@ -7,32 +7,37 @@ public class LadderController : MonoBehaviour, IDamageable
     [SerializeField] private int numberOfSteps = 3; // Number of steps in the ladder
     [SerializeField] private const int MIN_STEPS = 3; // Minimum number of steps in the ladder
     [SerializeField] private const int MAX_STEPS = 10; // Maximum number of steps in the ladder  
-    [SerializeField] private const int LADDER_DAMAGE = 1; 
+    [SerializeField] private const int LADDER_DAMAGE = 33; 
+    private const float LADDER_PIVOT_HEIGHT_DIFFERENCE_UNITS = 200f/512f; // Height in pixels of the pivot of the ladder in the sprite + 10 / pixels per unit
     private GameObject activeLadder;
+    private Collider2D myCollider;
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
     private bool isDead = false;
     bool ladderFlag = false;
     bool canHurt = false;
     Collider2D myPlatform = null;
+    List<GameObject> damagedEnemies;
 
     private void Start()
     {
         activeLadder = transform.GetChild(numberOfSteps-MIN_STEPS).gameObject;
         rb = GetComponent<Rigidbody2D>();
+        damagedEnemies = new List<GameObject>();
+        myCollider = GetComponent<Collider2D>();
     }
 
     private void Update()
     {
-        //this will be called by the characterController
-        // if(Input.GetKeyDown(KeyCode.O))
-        // {
-        //     IncreaseSize();
-        // }
-        // if(Input.GetKeyDown(KeyCode.P))
-        // {
-        //     DecreaseSize();
-        // }
+        //this will be called by the playerController
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            IncreaseSize();
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            DecreaseSize();
+        }
         // if(Input.GetKeyDown(KeyCode.I))
         // {
         //     SetFloor();
@@ -93,13 +98,15 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         ladderFlag = true;
         transform.SetParent(null);
-        activeLadder.GetComponent<Collider2D>().isTrigger = false;
+        transform.position += Vector3.up * LADDER_PIVOT_HEIGHT_DIFFERENCE_UNITS;    //this is to make the ladder fall to the floor adjusting height to the minimum required
+        transform.rotation = Quaternion.Euler(0, 0, 90);
+        myCollider.enabled = true;
         rb.isKinematic = false;
     }
     void SetLadderLogic()   //this is called when ladder touches floor and its the one actually setting things up
     {
+        myCollider.enabled = false;
         ladderFlag = false;
-        activeLadder.GetComponent<Collider2D>().isTrigger = true;
         rb.isKinematic = true;
         isDead = false;
     }
@@ -137,6 +144,7 @@ public class LadderController : MonoBehaviour, IDamageable
     public void EnableDamage()
     {
         canHurt = true;
+        damagedEnemies.Clear();
     }
     public void DisableDamage()
     {
@@ -151,7 +159,9 @@ public class LadderController : MonoBehaviour, IDamageable
         {
             myPlatform = other.collider;
         }
-        
+        else
+        { return; }
+
         if(!ladderFlag)
         {   return;}
 
@@ -165,8 +175,12 @@ public class LadderController : MonoBehaviour, IDamageable
 
         if(!other.CompareTag("Enemy"))
         {  return;}
+
+        if(damagedEnemies.Contains(other.gameObject))
+        {   return;}
         
         other.GetComponent<IDamageable>().TakeDamage(LADDER_DAMAGE);
+        damagedEnemies.Add(other.gameObject);
     }
 
 
