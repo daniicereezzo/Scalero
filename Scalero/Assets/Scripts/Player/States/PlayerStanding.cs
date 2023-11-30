@@ -78,9 +78,9 @@ public class PlayerStanding : PlayerBaseState
     {
         // Start the throw stick animation (it should throw the stick at the end of the animation)
         //playerAnimator.SetTrigger("onThrowStick");
-        GameObject stick = GameObject.Instantiate(characterController.throwableStickPrefab, characterController.transform.position+Vector3.up*0.2f, Quaternion.identity);
+        GameObject stick = GameObject.Instantiate(characterController.throwableStickPrefab, characterController.transform.position+Vector3.up*0.5f, Quaternion.identity);
         stick.GetComponent<Rigidbody2D>().velocity = characterController.transform.right * STICK_THROW_VELOCITY;
-        stick.GetComponent<Rigidbody2D>().AddTorque(Mathf.Sign(characterController.transform.right.sqrMagnitude) * 80);
+        stick.GetComponent<Rigidbody2D>().AddTorque(-Mathf.Sign(characterController.transform.right.x) * 1000f);
     }
 
     // We should create an Interactable component for every interactable object in the game
