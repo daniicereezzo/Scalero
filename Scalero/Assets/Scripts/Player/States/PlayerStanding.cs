@@ -77,6 +77,10 @@ public class PlayerStanding : PlayerBaseState
     public override void ThrowStick()
     {
         // Start the throw stick animation (it should throw the stick at the end of the animation)
+        //playerAnimator.SetTrigger("onThrowStick");
+        GameObject stick = GameObject.Instantiate(characterController.throwableStickPrefab, characterController.transform.position+Vector3.up*0.2f, Quaternion.identity);
+        stick.GetComponent<Rigidbody2D>().velocity = characterController.transform.right * STICK_THROW_VELOCITY;
+        stick.GetComponent<Rigidbody2D>().AddTorque(Mathf.Sign(characterController.transform.right.sqrMagnitude) * 80);
     }
 
     // We should create an Interactable component for every interactable object in the game

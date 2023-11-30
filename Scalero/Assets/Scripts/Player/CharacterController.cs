@@ -14,6 +14,7 @@ public class CharacterController : StateMachine
     HealthManager healthManager;
     Rigidbody2D rb;
     public LadderController ladderController;
+    public GameObject throwableStickPrefab;
     bool hasLadder = true;
 
     public float speed = 5;

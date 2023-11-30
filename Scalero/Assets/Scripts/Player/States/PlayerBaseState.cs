@@ -12,6 +12,7 @@ public abstract class PlayerBaseState : BaseState
     }
 
     #region variables
+    protected const float STICK_THROW_VELOCITY = 10;
     #endregion
 
     //overridear aqui los metodos de BaseState
