@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     [SerializeField] int health;
     int maxHealth = 100;
     [SerializeField] bool isDead = false;
+    bool canBeHit = true;
     Collider2D myPlatform = null;
 
     Animator animator;
@@ -20,12 +21,19 @@ public class HealthManager : MonoBehaviour, IDamageable
     public virtual void TakeDamage(int damage, GameObject damager = null)
     {
         if(isDead) { return; }
+        if(!canBeHit) { return; }
+        canBeHit = false;
 
         health -= damage;
         if (health <= 0)
         {
             health = 0;
             Die();
+        }
+        else
+        {
+            //animator.SetTrigger("onHit");
+            Invoke("CanBeHitAgain", 0.5f);
         }
     }
 
@@ -96,6 +104,10 @@ public class HealthManager : MonoBehaviour, IDamageable
     {
         isDead = true;
         animator.SetTrigger("onDie");
+    }
+    void CanBeHitAgain()
+    {
+        canBeHit = true;
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other)
