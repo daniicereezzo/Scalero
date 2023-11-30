@@ -24,9 +24,13 @@ public class EnemyHealthManager : HealthManager
         }
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(int damage, GameObject damager = null)
     {
         base.TakeDamage(damage);
+        if(IsDead())
+        {
+            GetComponent<EnemyController>().enabled = false;
+        }
 
         StartCoroutine(ChangeFace());
     }

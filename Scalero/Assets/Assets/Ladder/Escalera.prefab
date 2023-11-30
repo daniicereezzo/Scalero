@@ -118,6 +118,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -188,7 +192,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.38476562, y: 0.03125}
@@ -218,6 +222,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -288,7 +296,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.7636719, y: 0.033203125}
@@ -323,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -393,7 +405,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.57421875, y: 0.03125}
@@ -428,6 +440,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -503,7 +519,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.3310547, y: 0.03125}
@@ -533,6 +549,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -608,7 +628,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.5195312, y: 0.033203125}
@@ -638,6 +658,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -713,7 +737,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.1416016, y: 0.033203125}
@@ -743,6 +767,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -818,7 +846,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.95214844, y: 0.033203125}
@@ -848,6 +876,10 @@ PrefabInstance:
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
@@ -923,7 +955,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.7099609, y: 0.03125}

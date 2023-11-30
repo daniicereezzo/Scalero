@@ -17,7 +17,7 @@ public class HealthManager : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage, GameObject damager = null)
     {
         if(isDead) { return; }
 

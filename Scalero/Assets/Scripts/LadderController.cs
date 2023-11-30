@@ -14,7 +14,7 @@ public class LadderController : MonoBehaviour, IDamageable
     private Collider2D myCollider;
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
-    private bool isDead = false;
+    private bool isDead = true;
     bool ladderFlag = false;
     bool canHurt = false;
     float DEFAULT_ROTATION_Z;
@@ -130,13 +130,14 @@ public class LadderController : MonoBehaviour, IDamageable
         return isDead;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, GameObject damager)
     {
         isDead = true;
         rb.isKinematic = false;
         activeLadder.GetComponent<Collider2D>().isTrigger = false;
-        rb.AddForce(new Vector2(-damage, damage)*100);
-        rb.AddTorque(damage*100);
+        float directionSign = Mathf.Sign(transform.position.x - damager.transform.position.x);
+        rb.AddForce(new Vector2(directionSign * damage, damage)*50);
+        rb.AddTorque(-directionSign * damage*50);
     }
 
     public Collider2D GetPlatform()
