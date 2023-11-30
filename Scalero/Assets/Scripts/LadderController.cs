@@ -37,21 +37,21 @@ public class LadderController : MonoBehaviour, IDamageable
         {
             IncreaseSize();
         }
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            DecreaseSize();
-        }
+        // if(Input.GetKeyDown(KeyCode.P))
+        // {
+        //     DecreaseSize();
+        // }
         // if(Input.GetKeyDown(KeyCode.I))
         // {
         //     SetFloor();
         // }
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            SetLadder();
-        }   
+        // if(Input.GetKeyDown(KeyCode.U))
+        // {
+        //     SetLadder();
+        // }   
     }
 
-    void IncreaseSize()
+    public void IncreaseSize()
     {
         // if(transform.parent == null)
         // {   return;}
@@ -65,7 +65,7 @@ public class LadderController : MonoBehaviour, IDamageable
         activeLadder.SetActive(true);
     }
 
-    void DecreaseSize()
+    public void DecreaseSize()
     {
         // if(transform.parent == null)
         // {   return;}

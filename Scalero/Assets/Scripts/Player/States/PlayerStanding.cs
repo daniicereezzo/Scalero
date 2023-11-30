@@ -76,8 +76,13 @@ public class PlayerStanding : PlayerBaseState
 
     public override void ThrowStick()
     {
+        if (!characterController.HasLadder())
+        { return; }
+        if (characterController.ladderController.GetNumberOfSteps() <= LadderController.MIN_STEPS)
+        { return; }
         // Start the throw stick animation (it should throw the stick at the end of the animation)
         //playerAnimator.SetTrigger("onThrowStick");
+        characterController.ladderController.DecreaseSize();
         GameObject stick = GameObject.Instantiate(characterController.throwableStickPrefab, characterController.transform.position+Vector3.up*0.5f, Quaternion.identity);
         stick.GetComponent<Rigidbody2D>().velocity = characterController.transform.right * STICK_THROW_VELOCITY;
         stick.GetComponent<Rigidbody2D>().AddTorque(-Mathf.Sign(characterController.transform.right.x) * 1000f);
