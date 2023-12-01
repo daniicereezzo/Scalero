@@ -11,7 +11,7 @@ public class LadderController : MonoBehaviour, IDamageable
     [SerializeField] private const int DAMAGE_BONUS_PER_STEP = 5; 
     private const float LADDER_DROP_HEIGHT = 0.2f; // Enough Height so it starts falling from above the floor 
     private GameObject activeLadder;
-    private BoxCollider2D myCollider;
+    BoxCollider2D climbCollider;
     private Rigidbody2D rb;
     [SerializeField] private Transform handBone;
     private bool isDead = true;
@@ -26,21 +26,21 @@ public class LadderController : MonoBehaviour, IDamageable
         activeLadder = transform.GetChild(numberOfSteps-MIN_STEPS).gameObject;
         rb = GetComponent<Rigidbody2D>();
         damagedEnemies = new List<GameObject>();
-        myCollider = GetComponent<BoxCollider2D>();
+        climbCollider = GetComponent<BoxCollider2D>();
         DEFAULT_ROTATION_Z = transform.rotation.z;
     }
 
     private void Update()
     {
         //this will be called by the playerController
-        // if(Input.GetKeyDown(KeyCode.O))
-        // {
-        //     IncreaseSize();
-        // }
-        // if(Input.GetKeyDown(KeyCode.P))
-        // {
-        //     DecreaseSize();
-        // }
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            IncreaseSize();
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            DecreaseSize();
+        }
         // if(Input.GetKeyDown(KeyCode.I))
         // {
         //     SetFloor();
@@ -96,7 +96,7 @@ public class LadderController : MonoBehaviour, IDamageable
         transform.rotation = Quaternion.Euler(0, 0, 90);
         transform.localScale = new Vector3(1, 1, 1);
         transform.position += Vector3.up * LADDER_DROP_HEIGHT;    //this is to make the ladder fall to the floor adjusting height to the minimum required
-        SetMyCollider();
+        climbCollider.enabled = true;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
@@ -104,7 +104,7 @@ public class LadderController : MonoBehaviour, IDamageable
     }
     void SetLadderLogic()   //this is called when ladder touches floor and its the one actually setting things up
     {
-        myCollider.enabled = false;
+        climbCollider.enabled = false;
         ladderFlag = false;
         rb.isKinematic = true;
         isDead = false;
@@ -113,7 +113,7 @@ public class LadderController : MonoBehaviour, IDamageable
     public void SetWeapon(float playerRotationY)
     {
         isDead = true;
-        myCollider.enabled = false;
+        climbCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
         transform.SetParent(handBone);
@@ -137,11 +137,12 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         isDead = true;
         rb.isKinematic = false;
-        SetMyCollider();
+        // SetMyCollider();
+        climbCollider.enabled = true;
         rb.constraints = RigidbodyConstraints2D.None;
         float directionSign = Mathf.Sign(transform.position.x - damager.transform.position.x);
-        rb.AddForce(new Vector2(directionSign * damage, damage)*50);
-        rb.AddTorque(-directionSign * damage*50);
+        rb.AddForce(new Vector2(directionSign * damage, damage)*100f, ForceMode2D.Impulse);
+        rb.AddTorque(-directionSign * damage*1200f);
     }
 
     public Collider2D GetPlatform()
@@ -160,16 +161,7 @@ public class LadderController : MonoBehaviour, IDamageable
     public void DisableDamage()
     {
         canHurt = false;
-    }
-    void SetMyCollider()
-    {
-        myCollider.enabled = true;
-        myCollider.offset = activeLadder.GetComponent<BoxCollider2D>().offset;
-        myCollider.size = activeLadder.GetComponent<BoxCollider2D>().size;
-    }
-
-        
-
+    }   
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.collider.CompareTag("Platform"))
