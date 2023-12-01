@@ -4,14 +4,33 @@ using UnityEngine;
 
 public class StakeController : MonoBehaviour
 {
+    GameObject targetObject;
+    private void Start()
+    {
+        //I need a Start to disable the script from inspector
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("hit: " + other.gameObject.name);
+        if(this.enabled == false)
+        { return; }
 
-        if (other.gameObject.GetComponent<HealthManager>() != null)
+        if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<HealthManager>().TakeDamage(EnemyController.ATTACK_DAMAGE);
+            targetObject = other.gameObject;
         }
+        else if(other.gameObject.CompareTag("Ladder"))
+        {
+            targetObject = other.transform.parent.gameObject;
+        }
+        else
+        { return; }
+
+        if (targetObject.GetComponent<IDamageable>().IsDead())
+        { return; }
+
+        Debug.Log("hit: " + targetObject.name);
+
+        targetObject.GetComponent<IDamageable>().TakeDamage(EnemyController.ATTACK_DAMAGE, gameObject);
     }
 
 }

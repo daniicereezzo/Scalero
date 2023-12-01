@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour, IDamageable
+public abstract class HealthManager : MonoBehaviour, IDamageable
 {
     [SerializeField] int health;
     int maxHealth = 100;
     [SerializeField] bool isDead = false;
+    bool canBeHit = true;
     Collider2D myPlatform = null;
+    public GameObject leafParticlePrefab;
 
     Animator animator;
 
@@ -17,15 +19,23 @@ public class HealthManager : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage, GameObject damager = null)
     {
         if(isDead) { return; }
+        if(!canBeHit) { return; }
+        canBeHit = false;
 
+        GameObject.Instantiate(leafParticlePrefab, transform.position+Vector3.up*0.3f, Quaternion.identity);
         health -= damage;
         if (health <= 0)
         {
             health = 0;
             Die();
+        }
+        else
+        {
+            //animator.SetTrigger("onHit");
+            Invoke("CanBeHitAgain", 0.5f);
         }
     }
 
@@ -97,6 +107,10 @@ public class HealthManager : MonoBehaviour, IDamageable
         isDead = true;
         animator.SetTrigger("onDie");
     }
+    void CanBeHitAgain()
+    {
+        canBeHit = true;
+    }
 
     protected virtual void OnCollisionEnter2D(Collision2D other)
     {
@@ -106,4 +120,5 @@ public class HealthManager : MonoBehaviour, IDamageable
             myPlatform = other.collider;
         }
     }
+    protected abstract IEnumerator ChangeFace();
 }

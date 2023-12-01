@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ladder
   - Platform
+  - Enemy
+  - Step
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Enemy
   - Stake
   - Player
-  - 
-  - 
+  - LadderCollider
+  - Interactable
   - 
   - 
   - 
@@ -45,6 +47,12 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 2975796885
+    locked: 0
+  - name: Player
+    uniqueID: 3988485429
     locked: 0
   - name: Foreground
     uniqueID: 2374632605

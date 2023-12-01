@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5617299169139115146}
   - component: {fileID: 5617299169139115144}
   - component: {fileID: 2459966482114895458}
-  m_Layer: 0
+  - component: {fileID: 2665484300482407787}
+  m_Layer: 11
   m_Name: Escalera
   m_TagString: Ladder
   m_Icon: {fileID: 0}
@@ -67,7 +68,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -76,6 +77,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &2665484300482407787
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617299169139115151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.38604188, y: 0.031327814}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5120687, y: 0.4948691}
+  m_EdgeRadius: 0
 --- !u!1001 &333792173245352719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,6 +116,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
@@ -157,13 +192,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5214844, y: -0.21289062}
+  m_Offset: {x: 0.38476562, y: 0.03125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.15503876, y: 0.93253976}
+    pivot: {x: 0.24547803, y: 0.43650794}
     oldSize: {x: 1.5117188, y: 0.4921875}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -188,10 +223,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1600719994, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -253,13 +296,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9003906, y: -0.2109375}
+  m_Offset: {x: 0.7636719, y: 0.033203125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.103270225, y: 0.9251968}
+    pivot: {x: 0.16351119, y: 0.43307087}
     oldSize: {x: 2.2695312, y: 0.49609375}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -289,10 +332,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1102591499, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -354,13 +405,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7109375, y: -0.21289062}
+  m_Offset: {x: 0.57421875, y: 0.03125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.12396694, y: 0.9325397}
+    pivot: {x: 0.19628099, y: 0.43650794}
     oldSize: {x: 1.890625, y: 0.4921875}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -390,10 +441,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -198265354, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -460,13 +519,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4677734, y: -0.21289062}
+  m_Offset: {x: 1.3310547, y: 0.03125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.068846814, y: 0.9325397}
+    pivot: {x: 0.109007455, y: 0.43650794}
     oldSize: {x: 3.4042969, y: 0.4921875}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -491,10 +550,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1508813304, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -561,13 +628,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.65625, y: -0.2109375}
+  m_Offset: {x: 1.5195312, y: 0.033203125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.06198347, y: 0.9251968}
+    pivot: {x: 0.09814049, y: 0.43307087}
     oldSize: {x: 3.78125, y: 0.49609375}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -592,10 +659,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -441439, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -662,13 +737,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2783203, y: -0.2109375}
+  m_Offset: {x: 1.1416016, y: 0.033203125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.077469334, y: 0.9251968}
+    pivot: {x: 0.12265978, y: 0.43307087}
     oldSize: {x: 3.0253906, y: 0.49609375}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -693,10 +768,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1850830842, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -763,13 +846,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0888672, y: -0.2109375}
+  m_Offset: {x: 0.95214844, y: 0.033203125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.08856089, y: 0.9251968}
+    pivot: {x: 0.1402214, y: 0.43307087}
     oldSize: {x: 2.6464844, y: 0.49609375}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
@@ -794,10 +877,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7606600670401069228, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 401722301, guid: 18aaba169dc1ed700b3f18ad7de0e1ac, type: 3}
+    - target: {fileID: 7606600670401069230, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606600670401069231, guid: b43af38c811c8e4d4bdd8b465225fc32, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -864,13 +955,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.8466797, y: -0.21289062}
+  m_Offset: {x: 1.7099609, y: 0.03125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.056311592, y: 0.9325397}
+    pivot: {x: 0.08916002, y: 0.43650794}
     oldSize: {x: 4.1621094, y: 0.4921875}
     newSize: {x: 2.74, y: 6.52}
     adaptiveTilingThreshold: 0.5
