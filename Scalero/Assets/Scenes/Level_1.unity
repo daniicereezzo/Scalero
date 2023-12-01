@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7376450393054146179, guid: 85e34a4c54e88a692b4f03a782d6fe8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.01
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 7376450393054146179, guid: 85e34a4c54e88a692b4f03a782d6fe8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -624,9 +624,9 @@ GameObject:
   - component: {fileID: 232578886}
   - component: {fileID: 232578888}
   - component: {fileID: 232578887}
-  m_Layer: 7
+  m_Layer: 14
   m_Name: goal
-  m_TagString: Platform
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -932,6 +932,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
   m_PrefabInstance: {fileID: 380258056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &406235766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406235768}
+  - component: {fileID: 406235767}
+  m_Layer: 0
+  m_Name: SceneStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &406235767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406235766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08a5ef9c97521c848463ed06091a2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &406235768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406235766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442302007
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1663298784186398627, guid: 02486af3296e997109b15778c2722cf2, type: 3}
-  spawnRate: 5
+  spawnRate: 2
   maxEnemies: 12
 --- !u!4 &466861040
 Transform:

@@ -27,6 +27,7 @@ public class CharacterController : StateMachine
 
     protected virtual void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         playerStanding = new PlayerStanding(this);
         playerClimbing = new PlayerClimbing(this);
 
@@ -106,11 +107,13 @@ public class CharacterController : StateMachine
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Triggered");
         if((other.CompareTag("Ladder") && other.transform.parent.GetComponent<LadderController>().isPlanted()) || other.CompareTag("Step"))
         { interactable = other.gameObject; }
         if(other.CompareTag("Goal"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            Debug.Log("You win!");
+            SceneManager.LoadScene("Level_2");
         }
     }
     private void OnTriggerExit2D(Collider2D other)
