@@ -594,8 +594,8 @@ MonoBehaviour:
   - {fileID: 2992291586280567503}
   - {fileID: 6521874615299210025}
   m_Bounds:
-    m_Center: {x: 0.0076393783, y: 0.4130478, z: 0}
-    m_Extent: {x: 0.4253754, y: 1.2249099, z: 0}
+    m_Center: {x: 0.0076397955, y: 0.41304785, z: 0}
+    m_Extent: {x: 0.4253754, y: 1.22491, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   - {fileID: 7491665579753085263}
   m_Bounds:
     m_Center: {x: -0.011913404, y: 0.025268525, z: 0}
-    m_Extent: {x: 0.1213374, y: 0.18955457, z: 0}
+    m_Extent: {x: 0.12133737, y: 0.18955469, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1149,8 +1149,8 @@ MonoBehaviour:
   - {fileID: 4035121092331580249}
   - {fileID: 688296520340795212}
   m_Bounds:
-    m_Center: {x: 0.031818613, y: 0.04147777, z: 0}
-    m_Extent: {x: 0.1684826, y: 0.17052194, z: 0}
+    m_Center: {x: 0.031818584, y: 0.041477785, z: 0}
+    m_Extent: {x: 0.16848275, y: 0.17052193, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   - {fileID: 362533254730760125}
   - {fileID: 6401579123417783761}
   m_Bounds:
-    m_Center: {x: 0.034420013, y: 0.04950591, z: 0}
-    m_Extent: {x: 0.16666332, y: 0.16289428, z: 0}
+    m_Center: {x: 0.034419984, y: 0.04950597, z: 0}
+    m_Extent: {x: 0.16666335, y: 0.1628944, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   interactable: {fileID: 0}
   speed: 3
   jumpForce: 5
-  climbSpeed: 0.4
+  climbSpeed: 1.5
 --- !u!210 &3193325042929397499
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1716,8 +1716,8 @@ MonoBehaviour:
   - {fileID: 1465433273504383336}
   - {fileID: 2221631731762042344}
   m_Bounds:
-    m_Center: {x: -0.008308366, y: 0.01921016, z: 0}
-    m_Extent: {x: 0.115890995, y: 0.19590798, z: 0}
+    m_Center: {x: -0.008308634, y: 0.0192101, z: 0}
+    m_Extent: {x: 0.115891084, y: 0.1959078, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
