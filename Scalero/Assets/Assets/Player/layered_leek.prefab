@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 5201493157570674245}
   - component: {fileID: 6948149752962722183}
   - component: {fileID: 2644951958904657223}
+  - component: {fileID: 3193325042929397499}
   m_Layer: 10
   m_Name: layered_leek
   m_TagString: Player
@@ -1597,6 +1598,17 @@ MonoBehaviour:
   speed: 5
   jumpForce: 5
   climbSpeed: 5
+--- !u!210 &3193325042929397499
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545144165611288288}
+  m_Enabled: 1
+  m_SortingLayerID: -306481867
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &8775340078442908217
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 3771270552504506145}
   - component: {fileID: 9119147492668512235}
   - component: {fileID: 8945385326216968088}
+  - component: {fileID: 6238583337077716002}
   m_Layer: 8
   m_Name: Scallion_new
   m_TagString: Enemy
@@ -233,6 +234,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &6238583337077716002
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663298784186398627}
+  m_Enabled: 1
+  m_SortingLayerID: -1319170411
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &2428150502459250029
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8819584410043291328, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.112270564
+      value: 0.112270445
       objectReference: {fileID: 0}
     - target: {fileID: -8819584410043291328, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -919,19 +931,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5595683449531514041, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.00031092763
+      value: 0.00031099468
       objectReference: {fileID: 0}
     - target: {fileID: -5595683449531514041, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.00045123696
+      value: -0.00045120716
       objectReference: {fileID: 0}
     - target: {fileID: -5595683449531514041, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.10955231
+      value: 0.10955228
       objectReference: {fileID: 0}
     - target: {fileID: -5595683449531514041, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 0.1352071
+      value: 0.13520709
       objectReference: {fileID: 0}
     - target: {fileID: -4879450582746267458, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_SortingLayer
@@ -1163,15 +1175,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5575562649178785013, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.00018501282
+      value: 0.00018502027
       objectReference: {fileID: 0}
     - target: {fileID: 5575562649178785013, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.00046777725
+      value: -0.00046774745
       objectReference: {fileID: 0}
     - target: {fileID: 5575562649178785013, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.109678194
+      value: 0.10967823
       objectReference: {fileID: 0}
     - target: {fileID: 5575562649178785013, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -1195,15 +1207,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7561883537060048677, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.17201176
+      value: 0.17201173
       objectReference: {fileID: 0}
     - target: {fileID: 7561883537060048677, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.100495785
+      value: -0.100495726
       objectReference: {fileID: 0}
     - target: {fileID: 7561883537060048677, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.112304725
+      value: 0.11230467
       objectReference: {fileID: 0}
     - target: {fileID: 7561883537060048677, guid: a024c88d498c631e18198813082461e2, type: 3}
       propertyPath: m_Bounds.m_Extent.y
