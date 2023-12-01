@@ -8,7 +8,7 @@ public class ThrowableStickController : MonoBehaviour
     {
         Invoke("DestroyStick", 5);
     }
-    [SerializeField] const int STICK_DAMAGE = 10;
+    [SerializeField] const int STICK_DAMAGE = 50;
     private void OnTriggerEnter2D(Collider2D other) {
         if(!other.gameObject.CompareTag("Enemy"))
         { return; }
