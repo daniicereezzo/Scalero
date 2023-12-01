@@ -51,7 +51,7 @@ public class PlayerStanding : PlayerBaseState
         }
 
         // We have to implement ShouldStartClimbing() and ShouldStopClimbing()
-        if(vertical != 0 /*&& ShouldStartClimbing()*/)
+        if(vertical != 0 && characterController.GetInteractableTag() == "Ladder")
         {
             characterController.ChangeState(characterController.playerClimbing);
         }

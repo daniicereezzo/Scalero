@@ -8,6 +8,7 @@ public class PlayerClimbing : PlayerBaseState
     
     #region variables
     Rigidbody2D playerRigidbody;
+    LadderController ladderController;
     const float normalSpeed = 5;
     const float normalClimbSpeed = 5;
     const float sprintClimbSpeed = 10;
@@ -19,20 +20,39 @@ public class PlayerClimbing : PlayerBaseState
         base.OnInstantiated();
 
         playerRigidbody = characterController.GetComponent<Rigidbody2D>();
+        ladderController = characterController.GetComponentInChildren<LadderController>();
+    }
+    public override void Enter()
+    {
+        base.Enter();
+        playerRigidbody.gravityScale = 0;
+        characterController.GetComponent<Collider2D>().isTrigger = true;
+    }
+    public override void Exit()
+    {
+        base.Exit();
+        playerRigidbody.gravityScale = 1;
+        characterController.GetComponent<Collider2D>().isTrigger = false;
+        playerRigidbody.velocity = Vector2.zero;
+    }
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
+        if(ladderController.IsDead())   //this should be an event but i have no time
+        {
+            characterController.ChangeState(characterController.playerStanding);
+        }
     }
 
     public override void Move(float horizontal, float vertical)
     {
         // This way the moment we release the movement keys, the player will stop moving immediately because the velocity will be 0
         // (maybe the xSpeed should decrease gradually instead of instantly)
-        float xSpeed = horizontal * normalSpeed;
-
         float ySpeed = vertical * (isSprinting ? sprintClimbSpeed : normalClimbSpeed);
         
-        playerRigidbody.velocity = new Vector2(xSpeed, ySpeed);
+        playerRigidbody.velocity = Vector2.up * ySpeed;
 
-        // We have to implement ShouldStartClimbing() and ShouldStopClimbing()
-        if(horizontal != 0 /*&& ShouldStopClimbing()*/)
+        if(horizontal != 0)
         {
             characterController.ChangeState(characterController.playerStanding);
         }

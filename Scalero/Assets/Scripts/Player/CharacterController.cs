@@ -100,6 +100,12 @@ public class CharacterController : StateMachine
         { return; }
 
         if (other.gameObject == interactable)
-        { interactable = null; }
+        {
+            interactable = null;
+            if(GetCurrentState() == playerClimbing && other.CompareTag("Ladder"))
+            {
+                ChangeState(playerStanding);
+            }
+        }
     }
 }
