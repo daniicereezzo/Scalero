@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : StateMachine
 {
@@ -107,6 +108,10 @@ public class CharacterController : StateMachine
     {
         if((other.CompareTag("Ladder") && other.transform.parent.GetComponent<LadderController>().isPlanted()) || other.CompareTag("Step"))
         { interactable = other.gameObject; }
+        if(other.CompareTag("Goal"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
