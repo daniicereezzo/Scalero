@@ -21,20 +21,11 @@ public class InputManager : MonoBehaviour
         playerController.GetCurrentState().Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         // We have to decide if we want the player to be able to jump
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            playerController.GetCurrentState().Jump();
-        }
+        // if(Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     playerController.GetCurrentState().Jump();
+        // }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            playerController.GetCurrentState().StartSprinting();
-        }
-
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            playerController.GetCurrentState().StopSprinting();
-        }
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -57,5 +48,14 @@ public class InputManager : MonoBehaviour
 
             playerController.SetLadder();
         }
+        // if(Input.GetKeyDown(KeyCode.LeftShift))
+        // {
+        //     playerController.GetCurrentState().StartSprinting();
+        // }
+
+        // if(Input.GetKeyUp(KeyCode.LeftShift))
+        // {
+        //     playerController.GetCurrentState().StopSprinting();
+        // }
     }
 }

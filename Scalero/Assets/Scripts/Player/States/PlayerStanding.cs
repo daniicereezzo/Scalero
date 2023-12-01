@@ -10,10 +10,10 @@ public class PlayerStanding : PlayerBaseState
     Rigidbody2D playerRigidbody;
     Animator playerAnimator;
     const float normalSpeed = 5;
-    const float sprintSpeed = 10;
-    const float jumpForce = 5;
+    // const float sprintSpeed = 10;
+    // const float jumpForce = 5;
     const float MIN_ANIMATION_RATE = 0.6f;
-    bool isSprinting = false;
+    // bool isSprinting = false;
     
     #endregion
 
@@ -27,7 +27,8 @@ public class PlayerStanding : PlayerBaseState
 
     public override void Move(float horizontal, float vertical)
     {
-        float xSpeed = horizontal * (isSprinting ? sprintSpeed : normalSpeed);
+        // float xSpeed = horizontal * (isSprinting ? sprintSpeed : normalSpeed);
+        float xSpeed = horizontal * normalSpeed;
 
         // Should we set the ySpeed to the current ySpeed? Or should we set it to 0?
         playerRigidbody.velocity = new Vector2(xSpeed, playerRigidbody.velocity.y);
@@ -57,10 +58,10 @@ public class PlayerStanding : PlayerBaseState
         }
     }
 
-    public override void Jump()
-    {
-        // code here
-    }
+    // public override void Jump()
+    // {
+    //     // code here
+    // }
 
     public override void Attack()
     {
@@ -106,13 +107,13 @@ public class PlayerStanding : PlayerBaseState
         Debug.Log("There was a mistake");
     }
 
-    public override void StartSprinting()
-    {
-        isSprinting = true;
-    }
+    // public override void StartSprinting()
+    // {
+    //     isSprinting = true;
+    // }
 
-    public override void StopSprinting()
-    {
-        isSprinting = false;
-    }
+    // public override void StopSprinting()
+    // {
+    //     isSprinting = false;
+    // }
 }

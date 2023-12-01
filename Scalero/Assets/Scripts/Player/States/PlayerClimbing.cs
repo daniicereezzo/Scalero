@@ -10,10 +10,9 @@ public class PlayerClimbing : PlayerBaseState
     Rigidbody2D playerRigidbody;
     LadderController ladderController;
     float lowestPointY;
-    const float normalSpeed = 5;
     const float normalClimbSpeed = 5;
-    const float sprintClimbSpeed = 10;
-    bool isSprinting = false;
+    // const float sprintClimbSpeed = 10;
+    // bool isSprinting = false;
     #endregion
 
     protected override void OnInstantiated()
@@ -53,7 +52,8 @@ public class PlayerClimbing : PlayerBaseState
             characterController.ChangeState(characterController.playerStanding);
         }
 
-        float ySpeed = vertical * (isSprinting ? sprintClimbSpeed : normalClimbSpeed);
+        // float ySpeed = vertical * (isSprinting ? sprintClimbSpeed : normalClimbSpeed);
+        float ySpeed = vertical * normalClimbSpeed;
         
         if(ySpeed < 0 && characterController.transform.position.y <= lowestPointY)
         {
@@ -64,10 +64,10 @@ public class PlayerClimbing : PlayerBaseState
 
     }
 
-    public override void Jump()
-    {
-        // code here
-    }
+    // public override void Jump()
+    // {
+    //     // code here
+    // }
 
     public override void Attack()
     {
@@ -84,13 +84,13 @@ public class PlayerClimbing : PlayerBaseState
         // code here
     }
 
-    public override void StartSprinting()
-    {
-        isSprinting = true;
-    }
+    // public override void StartSprinting()
+    // {
+    //     isSprinting = true;
+    // }
 
-    public override void StopSprinting()
-    {
-        isSprinting = false;
-    }
+    // public override void StopSprinting()
+    // {
+    //     isSprinting = false;
+    // }
 }

@@ -18,10 +18,10 @@ public abstract class PlayerBaseState : BaseState
     //overridear aqui los metodos de BaseState
 
     public abstract void Move(float horizontal, float vertical);
-    public abstract void Jump();
+    // public abstract void Jump();
     public abstract void Attack();
     public abstract void ThrowStick();
     public abstract void Interact();
-    public abstract void StartSprinting();
-    public abstract void StopSprinting();
+    // public abstract void StartSprinting();
+    // public abstract void StopSprinting();
 }
