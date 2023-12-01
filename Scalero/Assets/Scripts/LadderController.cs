@@ -33,14 +33,14 @@ public class LadderController : MonoBehaviour, IDamageable
     private void Update()
     {
         //this will be called by the playerController
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            IncreaseSize();
-        }
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            DecreaseSize();
-        }
+        // if(Input.GetKeyDown(KeyCode.O))
+        // {
+        //     IncreaseSize();
+        // }
+        // if(Input.GetKeyDown(KeyCode.P))
+        // {
+        //     DecreaseSize();
+        // }
         // if(Input.GetKeyDown(KeyCode.I))
         // {
         //     SetFloor();

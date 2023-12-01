@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour
         // }
 
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Z))
         {
             playerController.GetCurrentState().Interact();
         }
@@ -50,7 +50,7 @@ public class InputManager : MonoBehaviour
             playerController.GetCurrentState().ThrowStick();
             Invoke("CanAttackAgain", 0.5f);
         }
-        if(Input.GetKeyDown(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if(!playerController.HasLadder())
             { return; }
