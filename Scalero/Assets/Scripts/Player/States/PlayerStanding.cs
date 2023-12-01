@@ -91,21 +91,19 @@ public class PlayerStanding : PlayerBaseState
     // We should create an Interactable component for every interactable object in the game
     public override void Interact()
     {
-        if(characterController.interactable == null)
+        if(characterController.GetInteractableTag() == null)
         {   return; }
-        if(characterController.interactable.CompareTag("Ladder"))
+        if(characterController.GetInteractableTag() == "Ladder")
         {
             characterController.RetrieveLadder();
-            characterController.interactable = null;
             return;
         }
-        if(characterController.interactable.CompareTag("Step"))
+        if(characterController.GetInteractableTag() == "Step")
         {
-            characterController.ladderController.IncreaseSize();
-            characterController.interactable.SetActive(false);
-            characterController.interactable = null;
+            characterController.AddStick();
             return;
         }
+        Debug.Log("There was a mistake");
     }
 
     public override void StartSprinting()
