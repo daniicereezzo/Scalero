@@ -72,7 +72,7 @@ public class PlayerStanding : PlayerBaseState
         { return; }
 
         int steps = characterController.ladderController.GetNumberOfSteps();
-        int interpolationParameter = (steps - LadderController.MIN_STEPS) / (LadderController.MAX_STEPS - LadderController.MIN_STEPS);
+        float interpolationParameter = (steps - LadderController.MIN_STEPS) / (LadderController.MAX_STEPS - LadderController.MIN_STEPS);
 
         playerAnimator.SetFloat("attackSpeedParameter", Mathf.Lerp(1, MIN_ANIMATION_RATE, interpolationParameter));
         playerAnimator.SetTrigger("onAttack");
