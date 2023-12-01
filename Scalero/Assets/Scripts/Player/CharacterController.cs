@@ -76,6 +76,8 @@ public class CharacterController : StateMachine
     {
         if(GetInteractableTag() != "Step")
         { return; }
+        if(!hasLadder)
+        { return; }
 
         ladderController.IncreaseSize();
         Destroy(interactable);
