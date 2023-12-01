@@ -9,6 +9,7 @@ public class PlayerClimbing : PlayerBaseState
     #region variables
     Rigidbody2D playerRigidbody;
     LadderController ladderController;
+    float lowestPointY;
     const float normalSpeed = 5;
     const float normalClimbSpeed = 5;
     const float sprintClimbSpeed = 10;
@@ -25,13 +26,14 @@ public class PlayerClimbing : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
-        playerRigidbody.gravityScale = 0;
+        playerRigidbody.isKinematic = true;
         characterController.GetComponent<Collider2D>().isTrigger = true;
+        lowestPointY = characterController.transform.position.y;
     }
     public override void Exit()
     {
         base.Exit();
-        playerRigidbody.gravityScale = 1;
+        playerRigidbody.isKinematic = false;
         characterController.GetComponent<Collider2D>().isTrigger = false;
         playerRigidbody.velocity = Vector2.zero;
     }
@@ -46,16 +48,20 @@ public class PlayerClimbing : PlayerBaseState
 
     public override void Move(float horizontal, float vertical)
     {
-        // This way the moment we release the movement keys, the player will stop moving immediately because the velocity will be 0
-        // (maybe the xSpeed should decrease gradually instead of instantly)
-        float ySpeed = vertical * (isSprinting ? sprintClimbSpeed : normalClimbSpeed);
-        
-        playerRigidbody.velocity = Vector2.up * ySpeed;
-
         if(horizontal != 0)
         {
             characterController.ChangeState(characterController.playerStanding);
         }
+
+        float ySpeed = vertical * (isSprinting ? sprintClimbSpeed : normalClimbSpeed);
+        
+        if(ySpeed < 0 && characterController.transform.position.y <= lowestPointY)
+        {
+            characterController.transform.position = new Vector3(characterController.transform.position.x, lowestPointY, characterController.transform.position.z);
+            return;
+        }
+        characterController.transform.Translate(Vector3.up * ySpeed * Time.deltaTime);
+
     }
 
     public override void Jump()
