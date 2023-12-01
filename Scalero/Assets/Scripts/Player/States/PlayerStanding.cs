@@ -9,7 +9,7 @@ public class PlayerStanding : PlayerBaseState
     #region variables
     Rigidbody2D playerRigidbody;
     Animator playerAnimator;
-    const float normalSpeed = 5;
+    float normalSpeed;
     // const float sprintSpeed = 10;
     // const float jumpForce = 5;
     const float MIN_ANIMATION_RATE = 0.6f;
@@ -23,6 +23,7 @@ public class PlayerStanding : PlayerBaseState
 
         playerRigidbody = characterController.GetComponent<Rigidbody2D>();
         playerAnimator = characterController.GetComponent<Animator>();
+        normalSpeed = characterController.speed;
     }
 
     public override void Move(float horizontal, float vertical)

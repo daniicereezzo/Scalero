@@ -11,7 +11,7 @@ public class PlayerClimbing : PlayerBaseState
     Animator playerAnimator;
     LadderController ladderController;
     float lowestPointY;
-    const float normalClimbSpeed = 5;
+    float normalClimbSpeed;
     // const float sprintClimbSpeed = 10;
     // bool isSprinting = false;
     #endregion
@@ -23,6 +23,7 @@ public class PlayerClimbing : PlayerBaseState
         playerRigidbody = characterController.GetComponent<Rigidbody2D>();
         playerAnimator = characterController.GetComponent<Animator>();
         ladderController = characterController.GetComponentInChildren<LadderController>();
+        normalClimbSpeed = characterController.climbSpeed;
     }
     public override void Enter()
     {

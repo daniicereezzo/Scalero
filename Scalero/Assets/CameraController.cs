@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     const float maxX = 4.45f;
     const float minY = -1.54f;
     const float maxY = 2.95f;
-    const float smoothSpeed = 0.1f;
+    const float smoothSpeed = 1f;
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;

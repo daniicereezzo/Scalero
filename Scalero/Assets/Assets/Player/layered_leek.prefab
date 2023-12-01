@@ -1599,9 +1599,9 @@ MonoBehaviour:
   currentStateName: 
   throwableStickPrefab: {fileID: 5036864754570287023, guid: 0863f7e7e2605a52d8631cbc4e1e1ed7, type: 3}
   interactable: {fileID: 0}
-  speed: 2
+  speed: 3
   jumpForce: 5
-  climbSpeed: 5
+  climbSpeed: 0.4
 --- !u!210 &3193325042929397499
 SortingGroup:
   m_ObjectHideFlags: 0
