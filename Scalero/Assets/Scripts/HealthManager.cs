@@ -9,6 +9,7 @@ public class HealthManager : MonoBehaviour, IDamageable
     [SerializeField] bool isDead = false;
     bool canBeHit = true;
     Collider2D myPlatform = null;
+    public GameObject leafParticlePrefab;
 
     Animator animator;
 
@@ -24,6 +25,7 @@ public class HealthManager : MonoBehaviour, IDamageable
         if(!canBeHit) { return; }
         canBeHit = false;
 
+        GameObject.Instantiate(leafParticlePrefab, transform.position+Vector3.up*0.3f, Quaternion.identity);
         health -= damage;
         if (health <= 0)
         {
