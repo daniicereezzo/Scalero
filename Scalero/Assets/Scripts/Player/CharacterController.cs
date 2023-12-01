@@ -91,9 +91,9 @@ public class CharacterController : StateMachine
         if(!hasLadder)
         { return; }
 
-        ladderController.IncreaseSize();
         Destroy(interactable);
         interactable = null;
+        ladderController.IncreaseSize();
     }
     public string GetInteractableTag()
     {
