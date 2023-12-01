@@ -67,7 +67,6 @@ public class EnemyHealthManager : HealthManager
 
     private IEnumerator ChangeFace()
     {
-        Debug.Log("ChangeFace");
         normalFace.SetActive(false);
         hurtFace.SetActive(true);
 
