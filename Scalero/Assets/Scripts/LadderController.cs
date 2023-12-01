@@ -33,10 +33,10 @@ public class LadderController : MonoBehaviour, IDamageable
     private void Update()
     {
         //this will be called by the playerController
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            IncreaseSize();
-        }
+        // if(Input.GetKeyDown(KeyCode.O))
+        // {
+        //     IncreaseSize();
+        // }
         // if(Input.GetKeyDown(KeyCode.P))
         // {
         //     DecreaseSize();
@@ -82,14 +82,6 @@ public class LadderController : MonoBehaviour, IDamageable
     public int GetNumberOfSteps()
     {   return numberOfSteps;}
 
-    // public bool IsPlanted()
-    // {
-    //     if (transform.parent == null)
-    //     {   return true;}
-    //     else
-    //     {   return false;}
-    // }
-
     public void SetFloor()  //probably not gonna implement this one
     {
         // activeLadder.GetComponent<BoxCollider2D>().isTrigger = false;
@@ -122,11 +114,18 @@ public class LadderController : MonoBehaviour, IDamageable
     {
         isDead = true;
         myCollider.enabled = false;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
         transform.SetParent(handBone);
         transform.localPosition = Vector3.zero;
         transform.rotation = Quaternion.Euler(0, 0, DEFAULT_ROTATION_Z);
         transform.localScale = new Vector3(Mathf.Sign(playerRotationY), 1, 1);
         rb.isKinematic = true;
+    }
+
+    public bool isPlanted()
+    {
+        return transform.parent == null;
     }
 
     public bool IsDead()
@@ -148,6 +147,10 @@ public class LadderController : MonoBehaviour, IDamageable
     public Collider2D GetPlatform()
     {
         return myPlatform;
+    }
+    public GameObject GetActiveLadder()
+    {
+        return activeLadder;
     }
     public void EnableDamage()
     {

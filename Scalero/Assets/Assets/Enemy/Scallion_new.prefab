@@ -120,7 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStateName: 
   animator: {fileID: 8945385326216968088}
-  myStake: {fileID: 0}
   speed: 3
 --- !u!114 &3988271479871316765
 MonoBehaviour:
@@ -138,6 +137,8 @@ MonoBehaviour:
   isDead: 0
   normalFace: {fileID: 6352237412267833458}
   hurtFace: {fileID: 2501419162451692286}
+  stepPrefab: {fileID: 5036864754570287023, guid: 13ecfb205c2f7df3ba785c9471722935, type: 3}
+  enemyStake: {fileID: 6976133277819156790}
 --- !u!61 &-3053226452180504869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -748,6 +749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cab2f334f89961a2984025c0524d3f3, type: 3}
+--- !u!1 &6976133277819156790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5036864754570287023, guid: 2cab2f334f89961a2984025c0524d3f3, type: 3}
+  m_PrefabInstance: {fileID: 2681539052303937177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6497978681493357098
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -57,9 +57,5 @@ public class InputManager : MonoBehaviour
 
             playerController.SetLadder();
         }
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            playerController.RetrieveLadder();
-        }
     }
 }

@@ -17,6 +17,7 @@ public class CharacterController : StateMachine
     [NonSerialized] public LadderController ladderController;
     public GameObject throwableStickPrefab;
     bool hasLadder = true;
+    public GameObject interactable = null;
 
     public float speed = 5;
     public float jumpForce = 5;
@@ -60,6 +61,7 @@ public class CharacterController : StateMachine
     {
         ladderController.SetLadder();
         hasLadder = false;
+        interactable = ladderController.GetActiveLadder();
     }
     public void RetrieveLadder()
     {
@@ -68,5 +70,19 @@ public class CharacterController : StateMachine
 
         ladderController.SetWeapon(transform.right.x);
         hasLadder = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if((other.CompareTag("Ladder") && other.transform.parent.GetComponent<LadderController>().isPlanted()) || other.CompareTag("Step"))
+        { interactable = other.gameObject; }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(interactable == null)
+        { return; }
+
+        if (other.gameObject == interactable)
+        { interactable = null; }
     }
 }

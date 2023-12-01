@@ -9,7 +9,6 @@ public class EnemyController : StateMachine
     public EnemyWaiting enemyWaiting; //Maybe its easier if the enemy always knows where the player is
     public EnemyAttacking enemyAttacking;
     public Animator animator;
-    public Collider2D myStake;
     public const float ATTACK_RANGE = 0.8f;
     public const int ATTACK_DAMAGE = 1;
     public const float FOLLOW_RANGE = 2f;

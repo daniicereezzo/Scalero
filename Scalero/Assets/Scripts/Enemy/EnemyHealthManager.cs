@@ -9,6 +9,8 @@ public class EnemyHealthManager : HealthManager
 
     public GameObject normalFace;
     public GameObject hurtFace;
+    public GameObject stepPrefab;
+    public GameObject enemyStake;
 
     protected override void Start()
     {
@@ -29,7 +31,12 @@ public class EnemyHealthManager : HealthManager
         base.TakeDamage(damage);
         if(IsDead())
         {
-            GetComponent<EnemyController>().enabled = false;
+            EnemyController enemyController = GetComponent<EnemyController>();
+            enemyController.enabled = false;
+            enemyController.StopAllCoroutines();
+            enemyStake.SetActive(false);
+            
+            GameObject.Instantiate(stepPrefab, transform.position+Vector3.up*0.5f, Quaternion.identity);
         }
 
         StartCoroutine(ChangeFace());
