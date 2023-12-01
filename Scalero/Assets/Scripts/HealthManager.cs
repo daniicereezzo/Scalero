@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour, IDamageable
+public abstract class HealthManager : MonoBehaviour, IDamageable
 {
     [SerializeField] int health;
     int maxHealth = 100;
@@ -120,4 +120,5 @@ public class HealthManager : MonoBehaviour, IDamageable
             myPlatform = other.collider;
         }
     }
+    protected abstract IEnumerator ChangeFace();
 }

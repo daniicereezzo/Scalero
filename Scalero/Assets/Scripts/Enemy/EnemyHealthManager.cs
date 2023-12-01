@@ -18,14 +18,6 @@ public class EnemyHealthManager : HealthManager
         enemyRenderers = GetComponentsInChildren<Renderer>();
     }
 
-    protected virtual void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(10);
-        }
-    }
-
     public override void TakeDamage(int damage, GameObject damager = null)
     {
         base.TakeDamage(damage);
@@ -65,7 +57,7 @@ public class EnemyHealthManager : HealthManager
         Destroy(gameObject);
     }
 
-    private IEnumerator ChangeFace()
+    protected override IEnumerator ChangeFace()
     {
         normalFace.SetActive(false);
         hurtFace.SetActive(true);

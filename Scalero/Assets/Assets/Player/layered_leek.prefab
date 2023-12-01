@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 4819106192569638269}
   - component: {fileID: 5355932248034104561}
   - component: {fileID: 8630368667090496376}
-  - component: {fileID: 604991679805505223}
+  - component: {fileID: 2547888936555904913}
   - component: {fileID: 5201493157570674245}
   - component: {fileID: 6948149752962722183}
   - component: {fileID: 2644951958904657223}
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8628f4ed4f790aa6a5336fc10c644aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &604991679805505223
+--- !u!114 &2547888936555904913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1528,12 +1528,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8545144165611288288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87da37aab65a2bf3cb07912aef8652ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 48436906cdbc9f374aeb7d5d45bc6a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
   isDead: 0
   leafParticlePrefab: {fileID: 2765291064309863517, guid: a7ff1b5f2492535929025aa3cb461277, type: 3}
+  normalFace: {fileID: 4990222087054089851}
+  hurtFace: {fileID: 7615062748106976467}
+  lowHealthFace: {fileID: 229386065454575600}
 --- !u!50 &5201493157570674245
 Rigidbody2D:
   serializedVersion: 4
