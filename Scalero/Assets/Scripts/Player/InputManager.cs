@@ -39,6 +39,7 @@ public class InputManager : MonoBehaviour
 
             canAttack = false;
             playerController.GetCurrentState().Attack();
+            Invoke("CanAttackAgain", 0.5f);
         }
 
         if(Input.GetKeyDown(KeyCode.X))
@@ -47,6 +48,7 @@ public class InputManager : MonoBehaviour
 
             canAttack = false;
             playerController.GetCurrentState().ThrowStick();
+            Invoke("CanAttackAgain", 0.5f);
         }
         if(Input.GetKeyDown(KeyCode.L))
         {
