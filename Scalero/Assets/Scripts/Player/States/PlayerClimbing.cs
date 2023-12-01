@@ -8,6 +8,7 @@ public class PlayerClimbing : PlayerBaseState
     
     #region variables
     Rigidbody2D playerRigidbody;
+    Animator playerAnimator;
     LadderController ladderController;
     float lowestPointY;
     const float normalClimbSpeed = 5;
@@ -20,19 +21,24 @@ public class PlayerClimbing : PlayerBaseState
         base.OnInstantiated();
 
         playerRigidbody = characterController.GetComponent<Rigidbody2D>();
+        playerAnimator = characterController.GetComponent<Animator>();
         ladderController = characterController.GetComponentInChildren<LadderController>();
     }
     public override void Enter()
     {
         base.Enter();
-        playerRigidbody.isKinematic = true;
+        playerAnimator.SetBool("isClimbing", true);
+        playerAnimator.SetBool("isWalking", false);
+        playerAnimator.SetBool("isFalling", false);
+        FreezeRigidbody(true);
         characterController.GetComponent<Collider2D>().isTrigger = true;
-        lowestPointY = characterController.transform.position.y;
+        lowestPointY = ladderController.transform.position.y-0.4f;
     }
     public override void Exit()
     {
         base.Exit();
-        playerRigidbody.isKinematic = false;
+        playerAnimator.SetBool("isClimbing", false);
+        FreezeRigidbody(false);
         characterController.GetComponent<Collider2D>().isTrigger = false;
         playerRigidbody.velocity = Vector2.zero;
     }
@@ -55,13 +61,15 @@ public class PlayerClimbing : PlayerBaseState
         // float ySpeed = vertical * (isSprinting ? sprintClimbSpeed : normalClimbSpeed);
         float ySpeed = vertical * normalClimbSpeed;
         
+        
         if(ySpeed < 0 && characterController.transform.position.y <= lowestPointY)
         {
             characterController.transform.position = new Vector3(characterController.transform.position.x, lowestPointY, characterController.transform.position.z);
+            playerAnimator.SetFloat("climbSpeedParameter", 0);
             return;
         }
         characterController.transform.Translate(Vector3.up * ySpeed * Time.deltaTime);
-
+        playerAnimator.SetFloat("climbSpeedParameter", Mathf.Abs(vertical));
     }
 
     // public override void Jump()
@@ -93,4 +101,11 @@ public class PlayerClimbing : PlayerBaseState
     // {
     //     isSprinting = false;
     // }
+
+    void FreezeRigidbody(bool freeze)
+    {
+        playerRigidbody.velocity = Vector2.zero;
+        playerRigidbody.angularVelocity = 0;
+        playerRigidbody.isKinematic = freeze;
+    }
 }

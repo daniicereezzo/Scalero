@@ -44,6 +44,8 @@ public class CharacterController : StateMachine
     {
         return (PlayerBaseState)currentState;
     }
+    
+    #region animation events
     public void EnableLadderDamage()
     {
         ladderController.EnableDamage();
@@ -52,6 +54,16 @@ public class CharacterController : StateMachine
     {
         ladderController.DisableDamage();
     }
+    public void ThrowStickTrigger()
+    {
+        if(currentState.name != "Player Standing")
+        { return; }
+        PlayerStanding playerStandingState = (PlayerStanding)GetCurrentState();
+
+        playerStandingState.ThrowStickLogic();
+    }
+    
+    #endregion
 
     public bool HasLadder()
     {

@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {
     private CharacterController playerController;
     private HealthManager healthManager;
+    bool canAttack = true;
 
     void Awake()
     {
@@ -34,11 +35,17 @@ public class InputManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C))
         {
+            if(!canAttack) { return; }
+
+            canAttack = false;
             playerController.GetCurrentState().Attack();
         }
 
         if(Input.GetKeyDown(KeyCode.X))
         {
+            if(!canAttack) { return; }
+
+            canAttack = false;
             playerController.GetCurrentState().ThrowStick();
         }
         if(Input.GetKeyDown(KeyCode.L))
@@ -58,4 +65,9 @@ public class InputManager : MonoBehaviour
         //     playerController.GetCurrentState().StopSprinting();
         // }
     }
+    public void CanAttackAgain()    //animator event
+    {
+        canAttack = true;
+    }
+    
 }
