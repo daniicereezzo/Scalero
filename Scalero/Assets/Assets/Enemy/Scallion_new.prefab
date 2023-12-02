@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e20752fd80e540bb0068c3449cef64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   isDead: 0
   leafParticlePrefab: {fileID: 2765291064309863517, guid: a7ff1b5f2492535929025aa3cb461277, type: 3}
   normalFace: {fileID: 6352237412267833458}

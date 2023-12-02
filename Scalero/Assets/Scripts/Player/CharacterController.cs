@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CharacterController : StateMachine
 {
     #region states
+    public static CharacterController instance;
     public PlayerClimbing playerClimbing;
     public PlayerStanding playerStanding;
     
@@ -27,6 +28,13 @@ public class CharacterController : StateMachine
 
     protected virtual void Awake()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        instance = this;
         DontDestroyOnLoad(gameObject);
         playerStanding = new PlayerStanding(this);
         playerClimbing = new PlayerClimbing(this);
@@ -129,5 +137,10 @@ public class CharacterController : StateMachine
                 ChangeState(playerStanding);
             }
         }
+    }
+    public void NewLevel()
+    {
+        hasLadder = true;
+        interactable = null;
     }
 }

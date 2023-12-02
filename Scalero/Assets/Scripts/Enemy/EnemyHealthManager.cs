@@ -21,6 +21,7 @@ public class EnemyHealthManager : HealthManager
     public override void TakeDamage(int damage, GameObject damager = null)
     {
         base.TakeDamage(damage);
+        Debug.Log("Enemy took " + damage + " damage");
         if(IsDead())
         {
             EnemyController enemyController = GetComponent<EnemyController>();

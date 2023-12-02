@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: -0.40000004
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -303,6 +303,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2547888936555904913, guid: 85e34a4c54e88a692b4f03a782d6fe8a, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7376450393054146179, guid: 85e34a4c54e88a692b4f03a782d6fe8a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -471,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.99
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -825,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -883,7 +887,7 @@ GameObject:
   - component: {fileID: 359968683}
   m_Layer: 0
   m_Name: health_bar
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -983,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.19
+      value: 0.59000003
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1137,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1663298784186398627, guid: 02486af3296e997109b15778c2722cf2, type: 3}
-  spawnRate: 2
+  spawnRate: 7
   maxEnemies: 12
 --- !u!4 &466861040
 Transform:
@@ -1236,7 +1240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.06
+      value: 3.33
       objectReference: {fileID: 0}
     - target: {fileID: 710707049511215378, guid: 02486af3296e997109b15778c2722cf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1295,7 +1299,7 @@ GameObject:
   - component: {fileID: 761893440}
   m_Layer: 0
   m_Name: health_bar_foreground
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

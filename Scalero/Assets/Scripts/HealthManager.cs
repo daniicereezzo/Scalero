@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class HealthManager : MonoBehaviour, IDamageable
 {
-    [SerializeField] int health;
+    [SerializeField] protected int health;
     int maxHealth = 100;
     [SerializeField] bool isDead = false;
     bool canBeHit = true;
@@ -15,7 +15,6 @@ public abstract class HealthManager : MonoBehaviour, IDamageable
 
     protected virtual void Start()
     {
-        RefillHealth();
         animator = GetComponent<Animator>();
     }
 

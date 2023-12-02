@@ -10,7 +10,10 @@ public class SceneStarter : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = new Vector3(-0.6f, -3f, 0);
-        GameObject.FindGameObjectWithTag("Ladder").transform.root.gameObject.GetComponent<LadderController>().SetWeapon(player.transform.right.x);
+        if (GameObject.FindGameObjectWithTag("Ladder").transform.root.gameObject.GetComponent<LadderController>() != null)
+        { GameObject.FindGameObjectWithTag("Ladder").transform.root.gameObject.GetComponent<LadderController>().SetWeapon(player.transform.right.x); }
+        
+        player.GetComponent<CharacterController>().NewLevel();
     }
-    
+
 }

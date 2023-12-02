@@ -44,4 +44,8 @@ public class PlayerHealthManager : HealthManager
             normalFace.SetActive(true);
         }
     }
+    public void SetHealth(int health)
+    {
+        this.health = health;
+    }
 }

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthBarController : MonoBehaviour
 {
+    
     private PlayerHealthManager playerHealthManager;
     private Vector3 initialPosition;
     private Vector3 initialScale;
@@ -21,8 +23,8 @@ public class HealthBarController : MonoBehaviour
     }
 
     void Update(){
+        UpdateHealthBar();
         if(currentHealth != playerHealthManager.GetHealth()){
-            UpdateHealthBar();
             currentHealth = playerHealthManager.GetHealth();
         }
     }

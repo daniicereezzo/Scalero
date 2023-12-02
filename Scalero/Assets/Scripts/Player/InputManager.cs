@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -56,6 +57,10 @@ public class InputManager : MonoBehaviour
             { return; }
 
             playerController.SetLadder();
+        }
+        if(Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         // if(Input.GetKeyDown(KeyCode.LeftShift))
         // {
