@@ -7,6 +7,7 @@ public class EnemyAttacking : EnemyBaseState
     public EnemyAttacking(EnemyController ec) : base(ec, "EnemyAttacking"){ }
     #region variables
     protected GameObject target;
+    protected StakeController stakeController;
     bool attacking;
 
 
@@ -20,6 +21,7 @@ public class EnemyAttacking : EnemyBaseState
     protected override void OnInstantiated()
     {
         base.OnInstantiated();
+        stakeController = sm.GetComponentInChildren<StakeController>();
         //código aquí
     }
 
@@ -50,22 +52,21 @@ public class EnemyAttacking : EnemyBaseState
 
     protected virtual IEnumerator Attack(GameObject target)
     {
-        attacking = true;
-        sm.animator.SetBool("attacking", true);
+        SetAttacking(true);
         while (Mathf.Abs(sm.transform.position.x - target.transform.position.x) < EnemyController.FOLLOW_RANGE)
         {
             if(target.GetComponent<IDamageable>().IsDead())
             {
-                sm.ChangeState(sm.enemyWaiting);
-                attacking = false;
-                
                 Debug.Log("Target is dead");
-                yield break;
+                SetAttacking(false);
+                sm.ChangeState(sm.enemyWaiting);
+                
+                yield break;    //should be unreachable but just in case
             }
 
             yield return null;
         }
-        sm.animator.SetBool("attacking", false);
+        SetAttacking(false);
     }
 
     public override void UpdateLogic()
@@ -74,7 +75,7 @@ public class EnemyAttacking : EnemyBaseState
         MoveTowardsTarget();
 
         //it should not change constantly between targets because new target is only assigned from waitingState, and this is only entered if there are no targets in range.
-        if (CheckIfTargetInRange() == null)
+        if (CheckIfTargetInRange() != target)
         {
             attacking = false;
             sm.ChangeState(sm.enemyWaiting);
@@ -84,6 +85,12 @@ public class EnemyAttacking : EnemyBaseState
     public void SetTarget(GameObject target)
     {
         this.target = target;
+    }
+    void SetAttacking(bool isAttacking)
+    {
+        this.attacking = isAttacking;
+        sm.animator.SetBool("attacking", isAttacking);
+        stakeController.enabled = isAttacking;
     }
 
 }

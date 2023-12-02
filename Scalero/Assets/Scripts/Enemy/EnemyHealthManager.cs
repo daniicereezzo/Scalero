@@ -9,6 +9,8 @@ public class EnemyHealthManager : HealthManager
 
     public GameObject normalFace;
     public GameObject hurtFace;
+    public GameObject stepPrefab;
+    public GameObject enemyStake;
 
     protected override void Start()
     {
@@ -16,17 +18,19 @@ public class EnemyHealthManager : HealthManager
         enemyRenderers = GetComponentsInChildren<Renderer>();
     }
 
-    protected virtual void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(10);
-        }
-    }
-
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(int damage, GameObject damager = null)
     {
         base.TakeDamage(damage);
+        Debug.Log("Enemy took " + damage + " damage");
+        if(IsDead())
+        {
+            EnemyController enemyController = GetComponent<EnemyController>();
+            enemyController.enabled = false;
+            enemyController.StopAllCoroutines();
+            enemyStake.SetActive(false);
+            
+            GameObject.Instantiate(stepPrefab, transform.position+Vector3.up*0.5f, Quaternion.identity);
+        }
 
         StartCoroutine(ChangeFace());
     }
@@ -54,9 +58,8 @@ public class EnemyHealthManager : HealthManager
         Destroy(gameObject);
     }
 
-    private IEnumerator ChangeFace()
+    protected override IEnumerator ChangeFace()
     {
-        Debug.Log("ChangeFace");
         normalFace.SetActive(false);
         hurtFace.SetActive(true);
 
